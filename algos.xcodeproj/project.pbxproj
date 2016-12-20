@@ -8,22 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		8A0565131E087C9100E263FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0565121E087C9100E263FA /* AppDelegate.swift */; };
-		8A0565151E087C9100E263FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0565141E087C9100E263FA /* ViewController.swift */; };
+		8A0565151E087C9100E263FA /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0565141E087C9100E263FA /* ContainerViewController.swift */; };
 		8A0565181E087C9100E263FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0565161E087C9100E263FA /* Main.storyboard */; };
 		8A05651B1E087C9100E263FA /* algos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8A0565191E087C9100E263FA /* algos.xcdatamodeld */; };
 		8A05651D1E087C9100E263FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A05651C1E087C9100E263FA /* Assets.xcassets */; };
 		8A0565201E087C9100E263FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A05651E1E087C9100E263FA /* LaunchScreen.storyboard */; };
+		8A0565291E0884FE00E263FA /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0565281E0884FE00E263FA /* MenuViewController.swift */; };
+		8A05652B1E0885B100E263FA /* TracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A05652A1E0885B100E263FA /* TracksViewController.swift */; };
+		8A0565301E08873900E263FA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A05652F1E08873900E263FA /* SWRevealViewController.m */; };
+		8A0565331E0898C800E263FA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0565321E0898C800E263FA /* ProfileViewController.swift */; };
+		8A0565351E0898EC00E263FA /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0565341E0898EC00E263FA /* LeaderboardViewController.swift */; };
+		8A05653C1E08D2C400E263FA /* TracksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A05653B1E08D2C400E263FA /* TracksTableViewCell.swift */; };
+		8AB64EBB1E09CB15009F1A94 /* TrackDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB64EBA1E09CB15009F1A94 /* TrackDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8A05650F1E087C9100E263FA /* algos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = algos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A0565121E087C9100E263FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8A0565141E087C9100E263FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8A0565141E087C9100E263FA /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		8A0565171E087C9100E263FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A05651A1E087C9100E263FA /* algos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = algos.xcdatamodel; sourceTree = "<group>"; };
 		8A05651C1E087C9100E263FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A05651F1E087C9100E263FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A0565211E087C9100E263FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A0565281E0884FE00E263FA /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		8A05652A1E0885B100E263FA /* TracksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksViewController.swift; sourceTree = "<group>"; };
+		8A05652D1E08873800E263FA /* algos-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "algos-Bridging-Header.h"; sourceTree = "<group>"; };
+		8A05652E1E08873900E263FA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
+		8A05652F1E08873900E263FA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
+		8A0565321E0898C800E263FA /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8A0565341E0898EC00E263FA /* LeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		8A05653B1E08D2C400E263FA /* TracksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksTableViewCell.swift; sourceTree = "<group>"; };
+		8AB64EBA1E09CB15009F1A94 /* TrackDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +72,32 @@
 		8A0565111E087C9100E263FA /* algos */ = {
 			isa = PBXGroup;
 			children = (
+				8A05652C1E0886FA00E263FA /* SWRevealViewController */,
 				8A0565121E087C9100E263FA /* AppDelegate.swift */,
-				8A0565141E087C9100E263FA /* ViewController.swift */,
+				8A0565141E087C9100E263FA /* ContainerViewController.swift */,
+				8A0565281E0884FE00E263FA /* MenuViewController.swift */,
+				8A05652A1E0885B100E263FA /* TracksViewController.swift */,
+				8AB64EBA1E09CB15009F1A94 /* TrackDetailsViewController.swift */,
+				8A0565321E0898C800E263FA /* ProfileViewController.swift */,
+				8A0565341E0898EC00E263FA /* LeaderboardViewController.swift */,
 				8A0565161E087C9100E263FA /* Main.storyboard */,
 				8A05651C1E087C9100E263FA /* Assets.xcassets */,
 				8A05651E1E087C9100E263FA /* LaunchScreen.storyboard */,
 				8A0565211E087C9100E263FA /* Info.plist */,
 				8A0565191E087C9100E263FA /* algos.xcdatamodeld */,
+				8A05653B1E08D2C400E263FA /* TracksTableViewCell.swift */,
 			);
 			path = algos;
+			sourceTree = "<group>";
+		};
+		8A05652C1E0886FA00E263FA /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8A05652E1E08873900E263FA /* SWRevealViewController.h */,
+				8A05652F1E08873900E263FA /* SWRevealViewController.m */,
+				8A05652D1E08873800E263FA /* algos-Bridging-Header.h */,
+			);
+			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,6 +133,7 @@
 					8A05650E1E087C9100E263FA = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = UJBSBJQ26X;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -140,9 +174,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A0565151E087C9100E263FA /* ViewController.swift in Sources */,
+				8A05653C1E08D2C400E263FA /* TracksTableViewCell.swift in Sources */,
+				8A0565151E087C9100E263FA /* ContainerViewController.swift in Sources */,
+				8AB64EBB1E09CB15009F1A94 /* TrackDetailsViewController.swift in Sources */,
 				8A05651B1E087C9100E263FA /* algos.xcdatamodeld in Sources */,
 				8A0565131E087C9100E263FA /* AppDelegate.swift in Sources */,
+				8A0565291E0884FE00E263FA /* MenuViewController.swift in Sources */,
+				8A0565331E0898C800E263FA /* ProfileViewController.swift in Sources */,
+				8A05652B1E0885B100E263FA /* TracksViewController.swift in Sources */,
+				8A0565351E0898EC00E263FA /* LeaderboardViewController.swift in Sources */,
+				8A0565301E08873900E263FA /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,11 +306,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = UJBSBJQ26X;
 				INFOPLIST_FILE = algos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.algos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "algos/algos-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -278,11 +322,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = UJBSBJQ26X;
 				INFOPLIST_FILE = algos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.algos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "algos/algos-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -306,6 +352,7 @@
 				8A0565261E087C9100E263FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

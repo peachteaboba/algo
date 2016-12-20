@@ -13,10 +13,19 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    // Caching Variables ---------
+    var currentView:String?
+    var tracksArray:[Track]?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Change status bar to white
+        UIApplication.shared.statusBarStyle = .lightContent
+        self.currentView = "tracks"
+        
         return true
     }
 
