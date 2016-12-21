@@ -33,7 +33,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let track2 = NSEntityDescription.insertNewObject(forEntityName: "Track",  into: context) as! Track
         track2.track = 2
         track2.name = "Arrays I"
-        track2.desc = "Why did the developer quit his job?"
+        track2.desc = "Why did the developer quit his job? He didn't get []'s"
         track2.completedM = 8
         track2.completedO = 0
         track2.totalM = 10
@@ -55,7 +55,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let track4 = NSEntityDescription.insertNewObject(forEntityName: "Track",  into: context) as! Track
         track4.track = 4
         track4.name = "Lists I"
-        track4.desc = "A single-file line of elephants."
+        track4.desc = "A single-file line of elephants"
         track4.completedM = 3
         track4.completedO = 0
         track4.totalM = 10
@@ -77,7 +77,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let track6 = NSEntityDescription.insertNewObject(forEntityName: "Track",  into: context) as! Track
         track6.track = 6
         track6.name = "Arrays II"
-        track6.desc = "He didn't get Arrays..."
+        track6.desc = "He didn't get Arrays.."
         track6.completedM = 0
         track6.completedO = 0
         track6.totalM = 10
@@ -88,7 +88,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let track7 = NSEntityDescription.insertNewObject(forEntityName: "Track",  into: context) as! Track
         track7.track = 7
         track7.name = "Strings II"
-        track7.desc = "tacocat"
+        track7.desc = "Tacocat spelled backwards is Tacocat."
         track7.completedM = 0
         track7.completedO = 0
         track7.totalM = 10
@@ -285,6 +285,8 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "trackCell", for: indexPath) as! TracksTableViewCell
         
+        cell.setInit()
+
         // Set the model
         cell.model = self.tracksArray[indexPath.row]
         
@@ -301,6 +303,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             // Set some data
             vc.trackData = self.tracksArray[indexPath.row]
+            
             
             // Make the transition
             self.present(vc, animated: true, completion: nil)

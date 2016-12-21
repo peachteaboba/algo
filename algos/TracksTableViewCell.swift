@@ -14,12 +14,29 @@ class TracksTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var progressBarBG: UIView!
+    @IBOutlet weak var progressBarBGWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var progressBar: UIView!
     @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var progressTextLabel: UILabel!
 
-    
-    
+    func setInit(){
+        
+        
+//        print("hi")
+        
+        if self.frame.width < 330 {
+            self.progressBarBGWidthConstraint.constant = self.frame.width * 0.25
+        } else {
+            self.progressBarBGWidthConstraint.constant = self.frame.width * 0.3
+        }
+        
+        self.progressBarWidthConstraint.constant = 0
+        
+//        print("\(self.progressBarBGWidthConstraint.constant)")
+        
+        
+    }
+  
     
     // Model -------------------------------
     private var _model:Track?
@@ -51,6 +68,13 @@ class TracksTableViewCell: UITableViewCell {
         self.progressBarBG.layer.cornerRadius = 3
         self.progressBarBG.backgroundColor = self.UIColorFromRGB(0xEDF0F2) // lighter grey
         
+//        self.progressBarBGWidthConstraint.constant = 90
+        
+
+        
+        
+        
+        
         
         self.progressBar.layer.cornerRadius = 3
         self.progressBar.backgroundColor = self.UIColorFromRGB(0x25C271) // green
@@ -64,7 +88,11 @@ class TracksTableViewCell: UITableViewCell {
         
         
         let percentage = CGFloat(completed!) / CGFloat(total!)
-        self.progressBarWidthConstraint.constant = self.progressBarBG.frame.width * percentage
+        self.progressBarWidthConstraint.constant = self.progressBarBGWidthConstraint.constant * percentage
+//        print("\(self._model?.name) -----> \(self.progressBarWidthConstraint.constant) ----> \(self.progressBarBGWidthConstraint.constant) ---> percentage: \(percentage)")
+        
+        
+        
         
         
         if percentage < 0.25 {
@@ -84,6 +112,7 @@ class TracksTableViewCell: UITableViewCell {
 //            self.progressTextLabel.font = .systemFont(ofSize: 20)
             
             self.myCoolImage.image = UIImage(named: "codeD")
+
         }
         
         

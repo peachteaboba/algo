@@ -499,6 +499,7 @@
                                             <outlet property="nameLabel" destination="IiS-bw-reO" id="LWi-Q2-huO"/>
                                             <outlet property="progressBar" destination="Iuj-gD-8FN" id="Idm-4a-keB"/>
                                             <outlet property="progressBarBG" destination="enG-79-z7c" id="cDr-fY-N4T"/>
+                                            <outlet property="progressBarBGWidthConstraint" destination="x5c-B3-GGH" id="ltY-vr-M60"/>
                                             <outlet property="progressBarWidthConstraint" destination="ixo-F0-1sg" id="NwX-1c-Zwv"/>
                                             <outlet property="progressTextLabel" destination="cdb-jB-id4" id="g1S-BC-bJI"/>
                                         </connections>

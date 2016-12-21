@@ -46,49 +46,24 @@ class TrackDetailViewController: UIViewController {
     
     
     
-    
-    
-    
-    
-//    func animateDownButton(){
-//       
-////        self.downArrowImageView.transform = CGAffineTransform.identity.rotated(by: CGFloat(M_PI))
-//        let rotateAngle: CGFloat
-//        rotateAngle = CGFloat(0)
-//        
-//        
-//        // Code to start animation :::::::::::::::::::::::::::::::::::::::::::::::
-//        self.view.setNeedsLayout()
-//        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [UIViewAnimationOptions.allowUserInteraction], animations: {
-//            // During the animation
-//            self.view.layoutIfNeeded()
-//            
-//            
-//            self.downArrowImageView.transform = CGAffineTransform.identity.rotated(by: rotateAngle)
-//            
-//            
-//        }) { (finished) in
-//            if finished {
-//                
-//                // do some stuff after the animation is finished
-//            }
-//        }
-//        // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-//        
-//    }
-    
-    
-    
-    
+   
     
     
     
     // MARK: UI Lifecycle Events ::::::::::::::::::::::::::::::::::::::::::::::
     
     override func viewWillAppear(_ animated: Bool) {
-    
         
     }
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
     
     
     override func viewDidLoad() {
@@ -107,29 +82,18 @@ class TrackDetailViewController: UIViewController {
         
         
         // Initial Styling -----------
-//        self.downArrowImageView.transform = CGAffineTransform.identity.rotated(by: CGFloat(-0.5))
-//        self.animateDownButton()
+        self.applyInitialStyles()
         
     }
     
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-//        self.animateDownButton()
-        
-    }
-    
-    
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     
     // MARK: Initial Styles :::::::::::::::::::::::::::::::::::::::::::::::::::
-    
+    func applyInitialStyles(){
+        
+        
+    }
     
     
 }
