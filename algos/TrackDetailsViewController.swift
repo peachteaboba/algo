@@ -12,7 +12,7 @@ class TrackDetailViewController: UIViewController {
     
     // MARK: Variables ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     var trackData:Track?
-    
+    var algosArray:[Algo]?
     
     
     
@@ -54,10 +54,24 @@ class TrackDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
+        // Go get algo data from appDel
+        let appDel = UIApplication.shared.delegate as! AppDelegate
+        let allAlgosArr = appDel.algosArray
+        for algo in allAlgosArr! {
+            if(algo.track == self.trackData?.track){
+                self.algosArray?.append(algo)
+                print("+++++++++++++ \(algo.title!) ++++++++++++++")
+            }
+        }
+
     }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         
     }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

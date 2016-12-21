@@ -14,8 +14,10 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // MARK: Fixtures :::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     var tracksArray:[Track] = []
+    var algosArray:[Algo] = []
+   
     
-    
+    // TRACKS Data <-------------------------------------------- Dummy Data for Tracks
     func initTracksData(){
         
         // Create Track 1 object :::::::::::::::::::::::::::::::
@@ -153,7 +155,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if self.context.hasChanges {
             do {
                 try self.context.save()
-                print("Success")
+                print("Successfully saved some TRACKS data to CoreData")
                 self.fetchAllTracks()
                 
             } catch {
@@ -162,6 +164,138 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
 
     }
+    
+    
+    
+    // ALGO Data <---------------------------------------------- Dummy Data for Algos
+    func initAlgosData(){
+        
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ TRACK 1 - Fundamentals
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ TRACK 1 - Fundamentals
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ TRACK 1 - Fundamentals
+        
+        // Create Algo 1 object :::::::::::::::::::::::::::::::
+        let algo1 = NSEntityDescription.insertNewObject(forEntityName: "Algo",  into: context) as! Algo
+        algo1.track = 1
+        algo1.place = 1
+        algo1.isCompleted = false
+        algo1.title = "Print 1-255"
+        algo1.desc = "Print all the integers from 1 to 255"
+        algo1.difficulty = "Beginner"
+        // ::::::::::::::::::::::::::::::::::::::::::::::::::::
+        
+        // Create Algo 2 object :::::::::::::::::::::::::::::::
+        let algo2 = NSEntityDescription.insertNewObject(forEntityName: "Algo",  into: context) as! Algo
+        algo2.track = 1
+        algo2.place = 2
+        algo2.isCompleted = false
+        algo2.title = "Print Odds 1-255"
+        algo2.desc = "Print all odd integers from 1 to 255"
+        algo2.difficulty = "Beginner"
+        // ::::::::::::::::::::::::::::::::::::::::::::::::::::
+        
+        // Create Algo 3 object :::::::::::::::::::::::::::::::
+        let algo3 = NSEntityDescription.insertNewObject(forEntityName: "Algo",  into: context) as! Algo
+        algo3.track = 1
+        algo3.place = 3
+        algo3.isCompleted = false
+        algo3.title = "Print Sum 1-255"
+        algo3.desc = "Print integers from 0 to 255, and the sum so far"
+        algo3.difficulty = "Beginner"
+        // ::::::::::::::::::::::::::::::::::::::::::::::::::::
+        
+        // Create Algo 4 object :::::::::::::::::::::::::::::::
+        let algo4 = NSEntityDescription.insertNewObject(forEntityName: "Algo",  into: context) as! Algo
+        algo4.track = 1
+        algo4.place = 4
+        algo4.isCompleted = false
+        algo4.title = "Iterate Array"
+        algo4.desc = "Print all values in a given array"
+        algo4.difficulty = "Beginner"
+        // ::::::::::::::::::::::::::::::::::::::::::::::::::::
+        
+        // Create Algo 5 object :::::::::::::::::::::::::::::::
+        let algo5 = NSEntityDescription.insertNewObject(forEntityName: "Algo",  into: context) as! Algo
+        algo5.track = 1
+        algo5.place = 5
+        algo5.isCompleted = false
+        algo5.title = "Find Max"
+        algo5.desc = "Print the largest element in a given array"
+        algo5.difficulty = "Beginner"
+        // ::::::::::::::::::::::::::::::::::::::::::::::::::::
+        
+        // Create Algo 6 object :::::::::::::::::::::::::::::::
+        let algo6 = NSEntityDescription.insertNewObject(forEntityName: "Algo",  into: context) as! Algo
+        algo6.track = 1
+        algo6.place = 6
+        algo6.isCompleted = false
+        algo6.title = "Get Average"
+        algo6.desc = "Analyze an array's values and print the average"
+        algo6.difficulty = "Beginner"
+        // ::::::::::::::::::::::::::::::::::::::::::::::::::::
+        
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ TRACK 2 - Arrays I
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ TRACK 2 - Arrays I
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ TRACK 2 - Arrays I
+        
+        // Create Algo 1 object :::::::::::::::::::::::::::::::
+        let algo2_1 = NSEntityDescription.insertNewObject(forEntityName: "Algo",  into: context) as! Algo
+        algo2_1.track = 2
+        algo2_1.place = 1
+        algo2_1.isCompleted = false
+        algo2_1.title = "PushFront"
+        algo2_1.desc = "Given an array and an additional value, insert this value at the beginning of the array. Do this without using any built-in array methods"
+        algo2_1.difficulty = "Beginner"
+        // ::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+        // Create Algo 2 object :::::::::::::::::::::::::::::::
+        let algo2_2 = NSEntityDescription.insertNewObject(forEntityName: "Algo",  into: context) as! Algo
+        algo2_2.track = 2
+        algo2_2.place = 2
+        algo2_2.isCompleted = false
+        algo2_2.title = "PopFront"
+        algo2_2.desc = "Given an array, remove and return the value at the beginning of the array. Do this without using any built-in array methods except pop()"
+        algo2_2.difficulty = "Beginner"
+        // ::::::::::::::::::::::::::::::::::::::::::::::::::::
+        
+        // Create Algo 3 object :::::::::::::::::::::::::::::::
+        let algo2_3 = NSEntityDescription.insertNewObject(forEntityName: "Algo",  into: context) as! Algo
+        algo2_3.track = 2
+        algo2_3.place = 3
+        algo2_3.isCompleted = false
+        algo2_3.title = "InsertAt"
+        algo2_3.desc = "Given an array, an index, and an additional value, insert the value into the array at the given index. Do this without using any built-in array methods"
+        algo2_3.difficulty = "Beginner"
+        // ::::::::::::::::::::::::::::::::::::::::::::::::::::
+        
+        // Create Algo 3 object :::::::::::::::::::::::::::::::
+        let algo2_4 = NSEntityDescription.insertNewObject(forEntityName: "Algo",  into: context) as! Algo
+        algo2_4.track = 2
+        algo2_4.place = 4
+        algo2_4.isCompleted = false
+        algo2_4.title = "RemoveAt"
+        algo2_4.desc = "Given an array and an index into the array, remove and return the array value at that index. Do this without using any built-in array methods except pop()"
+        algo2_4.difficulty = "Beginner"
+        // ::::::::::::::::::::::::::::::::::::::::::::::::::::
+        
+        
+        
+        if self.context.hasChanges {
+            do {
+                try self.context.save()
+                print("Successfully saved some ALGO data to CoreData")
+                self.fetchAllTracks()
+                
+            } catch {
+                print("\(error)")
+            }
+        }
+        
+        
+    }
+    
+    
+    
     
     
     
@@ -194,7 +328,9 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         appDel.currentView = "tracks"
         
         
-        // Initialize Tracks Data
+        // Initialize Tracks Data ++++++++++++++++++++++++++++++++++++++++++++
+        // Initialize Tracks Data ++++++++++++++++++++++++++++++++++++++++++++
+        // Initialize Tracks Data ++++++++++++++++++++++++++++++++++++++++++++
         if appDel.tracksArray == nil {
             // Tracks are not yet cached
             self.fetchAllTracks()
@@ -217,6 +353,39 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.tracksArray = appDel.tracksArray!
             self.tracksTableView.reloadData()
         }
+        
+        
+        
+        
+        // Initialize Algo Data ++++++++++++++++++++++++++++++++++++++++++++
+        // Initialize Algo Data ++++++++++++++++++++++++++++++++++++++++++++
+        // Initialize Algo Data ++++++++++++++++++++++++++++++++++++++++++++
+        if appDel.algosArray == nil {
+            // Algos are not yet cached
+            self.fetchAllAlgos()
+            appDel.algosArray = self.algosArray
+            
+            if self.algosArray.count == 0 {
+                // No data in Core Data, initialize tracks data
+                self.initAlgosData()
+            } else {
+                for algo in self.algosArray {
+                    print("-----------------> \(algo.title!)")
+                }
+            }
+        } else {
+            // Algos are already cached in appDel
+            print("got some cool stuff from the appDel (algosArray)")
+            self.algosArray = appDel.algosArray!
+        }
+        
+        
+        
+        
+        
+        
+        
+        
     }
     
     
@@ -314,44 +483,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        print("doing segure now -----")
-//        
-//        if segue.identifier == "ShowTrackDetails" {
-//            
-//            print("doing segure now")
-//            
-//        }
-//        
-//        
-//        
-//        
-//        
-//        
-//    }
-    
-    
-    
-//    
-//    func prepare(for segue: UIStoryboardSegue, sender: IndexPath) {
-//        
-//        print("doing segure now -----")
-//        
-//        
-//        if segue.identifier == "ShowTrackDetails" {
-//            
-//            print("doing segure now")
-//            
-//        }
-//
-//    }
-//    
-    
-    
-    
-    
+
     
     
     
@@ -375,7 +507,18 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.tracksTableView.reloadData()
     }
     
-    
+    func fetchAllAlgos() {
+        let userRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Algo")
+        do {
+            let results = try context.fetch(userRequest)
+            let tempArr = results as! [Algo]
+            self.algosArray = tempArr.sorted { $0.place < $1.place }
+            print("Got all the algos")
+            
+        } catch {
+            print("\(error)")
+        }
+    }
     
     
     
