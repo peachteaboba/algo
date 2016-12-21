@@ -172,7 +172,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // MARK: Variables ::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
+    let transition = CATransition()
     
     
     
@@ -248,6 +248,10 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
         
+        transition.duration = 0.25
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromRight
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
        
         
         
@@ -284,10 +288,68 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Set the model
         cell.model = self.tracksArray[indexPath.row]
         
-        
-        
+
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Force this action into the main queue
+        DispatchQueue.main.async {
+            // Instantiate a new instance of the target vc
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "TrackDetailVC") as! TrackDetailViewController
+            
+            // Set some data
+            vc.trackData = self.tracksArray[indexPath.row]
+            
+            // Make the transition
+            self.present(vc, animated: true, completion: nil)
+        }
+        
+        
+        
+        
+    }
+    
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        
+//        print("doing segure now -----")
+//        
+//        if segue.identifier == "ShowTrackDetails" {
+//            
+//            print("doing segure now")
+//            
+//        }
+//        
+//        
+//        
+//        
+//        
+//        
+//    }
+    
+    
+    
+//    
+//    func prepare(for segue: UIStoryboardSegue, sender: IndexPath) {
+//        
+//        print("doing segure now -----")
+//        
+//        
+//        if segue.identifier == "ShowTrackDetails" {
+//            
+//            print("doing segure now")
+//            
+//        }
+//
+//    }
+//    
+    
+    
+    
+    
+    
     
     
     

@@ -533,7 +533,7 @@
         <!--Track Detail View Controller-->
         <scene sceneID="Vk0-Bi-J0Y">
             <objects>
-                <viewController id="fSd-tN-YXE" customClass="TrackDetailViewController" customModule="algos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrackDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fSd-tN-YXE" customClass="TrackDetailViewController" customModule="algos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JRD-zd-DlN"/>
                         <viewControllerLayoutGuide type="bottom" id="4gj-zU-Nn7"/>
@@ -548,7 +548,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rc5-ci-YnJ">
                                         <rect key="frame" x="0.0" y="20" width="50" height="50"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="yWb-1O-V9G">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowDown" translatesAutoresizingMaskIntoConstraints="NO" id="yWb-1O-V9G">
                                                 <rect key="frame" x="8" y="8" width="34" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="yWb-1O-V9G" secondAttribute="height" multiplier="1:1" id="HpC-Ux-QdD"/>
@@ -598,6 +598,11 @@
                             <constraint firstItem="jsP-DY-l9c" firstAttribute="top" secondItem="Rna-EE-Ggm" secondAttribute="top" id="k3r-yI-noc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButtonView" destination="Rc5-ci-YnJ" id="L1z-Hh-hJ7"/>
+                        <outlet property="downArrowImageView" destination="yWb-1O-V9G" id="Fmo-4K-cKY"/>
+                        <outlet property="trackNameLabel" destination="0a8-LZ-0YS" id="oCy-Mq-dX0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bB-P3-sDX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -605,7 +610,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="256" height="256"/>
+        <image name="arrowDown" width="512" height="512"/>
         <image name="code" width="250" height="250"/>
         <image name="menu" width="128" height="128"/>
         <image name="profile" width="128" height="128"/>
