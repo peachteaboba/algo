@@ -19,6 +19,7 @@
 		8A0565351E0898EC00E263FA /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0565341E0898EC00E263FA /* LeaderboardViewController.swift */; };
 		8A05653C1E08D2C400E263FA /* TracksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A05653B1E08D2C400E263FA /* TracksTableViewCell.swift */; };
 		8A3597031E09F23B00A0C4AE /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3597021E09F23B00A0C4AE /* SWRevealViewController.m */; };
+		8A6841221E0B2A0B00E18978 /* AlgosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6841211E0B2A0B00E18978 /* AlgosTableViewCell.swift */; };
 		8AB64EBB1E09CB15009F1A94 /* TrackDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB64EBA1E09CB15009F1A94 /* TrackDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		8A05653B1E08D2C400E263FA /* TracksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksTableViewCell.swift; sourceTree = "<group>"; };
 		8A3597011E09F23B00A0C4AE /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../Desktop - Andy’s MacBook/algos/algos/SWRevealFiles/SWRevealViewController.h"; sourceTree = "<group>"; };
 		8A3597021E09F23B00A0C4AE /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../Desktop - Andy’s MacBook/algos/algos/SWRevealFiles/SWRevealViewController.m"; sourceTree = "<group>"; };
+		8A6841211E0B2A0B00E18978 /* AlgosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlgosTableViewCell.swift; sourceTree = "<group>"; };
 		8AB64EBA1E09CB15009F1A94 /* TrackDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 				8A0565211E087C9100E263FA /* Info.plist */,
 				8A0565191E087C9100E263FA /* algos.xcdatamodeld */,
 				8A05653B1E08D2C400E263FA /* TracksTableViewCell.swift */,
+				8A6841211E0B2A0B00E18978 /* AlgosTableViewCell.swift */,
 			);
 			path = algos;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				8A0565131E087C9100E263FA /* AppDelegate.swift in Sources */,
 				8A0565291E0884FE00E263FA /* MenuViewController.swift in Sources */,
 				8A0565331E0898C800E263FA /* ProfileViewController.swift in Sources */,
+				8A6841221E0B2A0B00E18978 /* AlgosTableViewCell.swift in Sources */,
 				8A05652B1E0885B100E263FA /* TracksViewController.swift in Sources */,
 				8A3597031E09F23B00A0C4AE /* SWRevealViewController.m in Sources */,
 				8A0565351E0898EC00E263FA /* LeaderboardViewController.swift in Sources */,

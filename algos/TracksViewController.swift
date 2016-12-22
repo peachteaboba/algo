@@ -181,7 +181,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         algo1.isCompleted = false
         algo1.title = "Print 1-255"
         algo1.desc = "Print all the integers from 1 to 255"
-        algo1.difficulty = "Beginner"
+        algo1.difficulty = "1"
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
         // Create Algo 2 object :::::::::::::::::::::::::::::::
@@ -191,7 +191,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         algo2.isCompleted = false
         algo2.title = "Print Odds 1-255"
         algo2.desc = "Print all odd integers from 1 to 255"
-        algo2.difficulty = "Beginner"
+        algo2.difficulty = "1"
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
         // Create Algo 3 object :::::::::::::::::::::::::::::::
@@ -201,7 +201,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         algo3.isCompleted = false
         algo3.title = "Print Sum 1-255"
         algo3.desc = "Print integers from 0 to 255, and the sum so far"
-        algo3.difficulty = "Beginner"
+        algo3.difficulty = "2"
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
         // Create Algo 4 object :::::::::::::::::::::::::::::::
@@ -211,7 +211,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         algo4.isCompleted = false
         algo4.title = "Iterate Array"
         algo4.desc = "Print all values in a given array"
-        algo4.difficulty = "Beginner"
+        algo4.difficulty = "2"
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
         // Create Algo 5 object :::::::::::::::::::::::::::::::
@@ -221,7 +221,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         algo5.isCompleted = false
         algo5.title = "Find Max"
         algo5.desc = "Print the largest element in a given array"
-        algo5.difficulty = "Beginner"
+        algo5.difficulty = "3"
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
         // Create Algo 6 object :::::::::::::::::::::::::::::::
@@ -231,7 +231,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         algo6.isCompleted = false
         algo6.title = "Get Average"
         algo6.desc = "Analyze an array's values and print the average"
-        algo6.difficulty = "Beginner"
+        algo6.difficulty = "3"
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
         // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ TRACK 2 - Arrays I
@@ -245,7 +245,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         algo2_1.isCompleted = false
         algo2_1.title = "PushFront"
         algo2_1.desc = "Given an array and an additional value, insert this value at the beginning of the array. Do this without using any built-in array methods"
-        algo2_1.difficulty = "Beginner"
+        algo2_1.difficulty = "1"
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
 
         // Create Algo 2 object :::::::::::::::::::::::::::::::
@@ -255,7 +255,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         algo2_2.isCompleted = false
         algo2_2.title = "PopFront"
         algo2_2.desc = "Given an array, remove and return the value at the beginning of the array. Do this without using any built-in array methods except pop()"
-        algo2_2.difficulty = "Beginner"
+        algo2_2.difficulty = "2"
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
         // Create Algo 3 object :::::::::::::::::::::::::::::::
@@ -265,7 +265,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         algo2_3.isCompleted = false
         algo2_3.title = "InsertAt"
         algo2_3.desc = "Given an array, an index, and an additional value, insert the value into the array at the given index. Do this without using any built-in array methods"
-        algo2_3.difficulty = "Beginner"
+        algo2_3.difficulty = "2"
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
         // Create Algo 3 object :::::::::::::::::::::::::::::::
@@ -275,7 +275,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         algo2_4.isCompleted = false
         algo2_4.title = "RemoveAt"
         algo2_4.desc = "Given an array and an index into the array, remove and return the array value at that index. Do this without using any built-in array methods except pop()"
-        algo2_4.difficulty = "Beginner"
+        algo2_4.difficulty = "3"
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
         
@@ -284,7 +284,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
             do {
                 try self.context.save()
                 print("Successfully saved some ALGO data to CoreData")
-                self.fetchAllTracks()
+                self.fetchAllAlgos()
                 
             } catch {
                 print("\(error)")
@@ -306,7 +306,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // MARK: Variables ::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    let transition = CATransition()
+//    let transition = CATransition()
     
     
     
@@ -334,11 +334,11 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if appDel.tracksArray == nil {
             // Tracks are not yet cached
             self.fetchAllTracks()
-            appDel.tracksArray = self.tracksArray
             
             if self.tracksArray.count == 0 {
                 // No data in Core Data, initialize tracks data
                 self.initTracksData()
+                appDel.tracksArray = self.tracksArray
             } else {
                 
                 for track in self.tracksArray {
@@ -350,6 +350,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {
             // Tracks are already cached in appDel
             print("got some cool stuff from the appDel (tracksArray)")
+            print(appDel.tracksArray!)
             self.tracksArray = appDel.tracksArray!
             self.tracksTableView.reloadData()
         }
@@ -363,11 +364,12 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if appDel.algosArray == nil {
             // Algos are not yet cached
             self.fetchAllAlgos()
-            appDel.algosArray = self.algosArray
             
             if self.algosArray.count == 0 {
                 // No data in Core Data, initialize tracks data
                 self.initAlgosData()
+                appDel.algosArray = self.algosArray
+                
             } else {
                 for algo in self.algosArray {
                     print("-----------------> \(algo.title!)")
@@ -376,6 +378,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {
             // Algos are already cached in appDel
             print("got some cool stuff from the appDel (algosArray)")
+            print(appDel.algosArray!)
             self.algosArray = appDel.algosArray!
         }
         
@@ -396,8 +399,9 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         
         
-        // Initial Styling
-        
+        // Initial Styling ----------
+        // Table view margins
+        self.tracksTableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 40.0, 0.0)
         
         
         
@@ -417,10 +421,10 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
         
-        transition.duration = 0.25
-        transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromRight
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+//        transition.duration = 0.25
+//        transition.type = kCATransitionPush
+//        transition.subtype = kCATransitionFromRight
+//        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
        
         
         
@@ -472,7 +476,16 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             // Set some data
             vc.trackData = self.tracksArray[indexPath.row]
+
+            var algoArray:[Algo] = []
+            for algo in self.algosArray {
+                if(algo.track == self.tracksArray[indexPath.row].track){
+                    algoArray.append(algo)
+                }
+            }
             
+            
+            vc.algosArray = algoArray
             
             // Make the transition
             self.present(vc, animated: true, completion: nil)
@@ -499,7 +512,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let results = try context.fetch(userRequest)
             let tempArr = results as! [Track]
             self.tracksArray = tempArr.sorted { $0.track < $1.track }
-            
+            print("Got all the tracks")
         } catch {
             print("\(error)")
         }
@@ -514,14 +527,11 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let tempArr = results as! [Algo]
             self.algosArray = tempArr.sorted { $0.place < $1.place }
             print("Got all the algos")
-            
         } catch {
             print("\(error)")
         }
     }
     
-    
-    
-    
+
 }
 

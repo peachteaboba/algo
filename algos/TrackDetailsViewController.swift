@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TrackDetailViewController: UIViewController {
+class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: Variables ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     var trackData:Track?
@@ -22,6 +22,7 @@ class TrackDetailViewController: UIViewController {
     @IBOutlet var trackNameLabel: UILabel!
     @IBOutlet weak var downArrowImageView: UIImageView!
 
+    @IBOutlet weak var algosTableView: UITableView!
     
     
     
@@ -32,42 +33,25 @@ class TrackDetailViewController: UIViewController {
     // MARK: Handle Stuff Tapped ::::::::::::::::::::::::::::::::::::::::::::::
     
     func handleBackButtonTapped(){
-        
         // Dismiss this view controller
         self.dismiss(animated: true, completion: nil)
-        
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-   
-    
-    
+
     
     // MARK: UI Lifecycle Events ::::::::::::::::::::::::::::::::::::::::::::::
     
     override func viewWillAppear(_ animated: Bool) {
         
-        // Go get algo data from appDel
-        let appDel = UIApplication.shared.delegate as! AppDelegate
-        let allAlgosArr = appDel.algosArray
-        for algo in allAlgosArr! {
-            if(algo.track == self.trackData?.track){
-                self.algosArray?.append(algo)
-                print("+++++++++++++ \(algo.title!) ++++++++++++++")
-            }
-        }
+        
 
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        
+        
         
     }
     
@@ -82,12 +66,8 @@ class TrackDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        print("View Did Load")
-        self.trackNameLabel.text = self.trackData?.name
-        
-        
+
+
         // Assign event handler to backButtonView
         let backButtonTap = UITapGestureRecognizer(target: self, action: #selector(self.handleBackButtonTapped))
         self.backButtonView.isUserInteractionEnabled = true
@@ -106,8 +86,70 @@ class TrackDetailViewController: UIViewController {
     // MARK: Initial Styles :::::::::::::::::::::::::::::::::::::::::::::::::::
     func applyInitialStyles(){
         
+        self.trackNameLabel.text = self.trackData?.name
+        
+        // Table view margins
+        self.algosTableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 40.0, 0.0)
         
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    // MARK: Table View Protocol Methods :::::::::::::::::::::::::::::::::::::::::::::::::::
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let algoArr = self.algosArray {
+            return algoArr.count
+        } else {
+            print("errrrrrrrrrrr")
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "algoCell", for: indexPath) as! AlgosTableViewCell
+        
+        // Set the model
+        cell.model = (self.algosArray?[indexPath.row])!
+        
+        
+        
+        
+        
+        // Set dynamic cell height
+        self.algosTableView.estimatedRowHeight = 80
+        self.algosTableView.rowHeight = UITableViewAutomaticDimension
+        
+        
+        
+        
+        
+
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 }

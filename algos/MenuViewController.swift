@@ -23,6 +23,8 @@ class MenuViewController: UITableViewController {
     
 
     @IBOutlet weak var tracksLabel: UILabel!
+    @IBOutlet weak var profileLabel: UILabel!
+    @IBOutlet weak var leaderboardLabel: UILabel!
     
     @IBOutlet weak var tracksImage: UIImageView!
     @IBOutlet weak var profileImage: UIImageView!
@@ -49,8 +51,6 @@ class MenuViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // Initial Styling -----------
-
         
     }
     
@@ -64,17 +64,26 @@ class MenuViewController: UITableViewController {
         
         let appDel = UIApplication.shared.delegate as! AppDelegate
         if appDel.currentView == "tracks" {
-            self.tracksImage.image = UIImage(named: "tracksC")
-            self.profileImage.image = UIImage(named: "profile")
-            self.starImage.image = UIImage(named: "star")
+
+            // Text
+            self.tracksLabel.textColor = self.UIColorFromRGB(0xFFFFFF) // white
+            self.profileLabel.textColor = self.UIColorFromRGB(0x868F91) // grey
+            self.leaderboardLabel.textColor = self.UIColorFromRGB(0x868F91) // grey
+            
         } else if appDel.currentView == "profile" {
-            self.tracksImage.image = UIImage(named: "tracks")
-            self.profileImage.image = UIImage(named: "profileC")
-            self.starImage.image = UIImage(named: "star")
+
+            // Text
+            self.tracksLabel.textColor = self.UIColorFromRGB(0x868F91) // white
+            self.profileLabel.textColor = self.UIColorFromRGB(0xFFFFFF) // grey
+            self.leaderboardLabel.textColor = self.UIColorFromRGB(0x868F91) // grey
+            
         } else if appDel.currentView == "leaderboard" {
-            self.tracksImage.image = UIImage(named: "tracks")
-            self.profileImage.image = UIImage(named: "profile")
-            self.starImage.image = UIImage(named: "starC")
+
+            // Text
+            self.tracksLabel.textColor = self.UIColorFromRGB(0x868F91) // white
+            self.profileLabel.textColor = self.UIColorFromRGB(0x868F91) // grey
+            self.leaderboardLabel.textColor = self.UIColorFromRGB(0xFFFFFF) // grey
+            
         }
         
         
