@@ -617,11 +617,19 @@
                                                     <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOl-4I-e03">
+                                                    <rect key="frame" x="8" y="8" width="50" height="50"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="gOl-4I-e03" secondAttribute="height" multiplier="1:1" id="hO3-RP-ooc"/>
+                                                        <constraint firstAttribute="height" constant="50" id="zr7-20-D1p"/>
+                                                    </constraints>
+                                                </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addBtn" translatesAutoresizingMaskIntoConstraints="NO" id="LPg-gV-MGq">
                                                     <rect key="frame" x="8" y="8" width="50" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="4NY-9u-fyR"/>
-                                                        <constraint firstAttribute="width" secondItem="LPg-gV-MGq" secondAttribute="height" multiplier="1:1" id="7hs-at-6sZ"/>
+                                                        <constraint firstAttribute="width" secondItem="LPg-gV-MGq" secondAttribute="height" multiplier="1:1" id="4L4-aT-0eW"/>
+                                                        <constraint firstAttribute="height" constant="50" id="tGx-QA-Nut"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xyu-6j-Hpp">
@@ -651,15 +659,17 @@
                                             <constraints>
                                                 <constraint firstItem="XqR-0I-TSW" firstAttribute="leading" secondItem="Xyu-6j-Hpp" secondAttribute="trailing" constant="2" id="1sY-Pw-Vft"/>
                                                 <constraint firstItem="T7T-o5-ji6" firstAttribute="leading" secondItem="ZPT-wc-oNn" secondAttribute="leading" id="1tY-zt-QIn"/>
+                                                <constraint firstItem="gOl-4I-e03" firstAttribute="leading" secondItem="6pH-jU-83W" secondAttribute="leadingMargin" id="ACh-GX-w2x"/>
                                                 <constraint firstItem="ZPT-wc-oNn" firstAttribute="top" secondItem="6pH-jU-83W" secondAttribute="topMargin" constant="11.5" id="CAR-hU-jb0"/>
-                                                <constraint firstItem="LPg-gV-MGq" firstAttribute="top" secondItem="6pH-jU-83W" secondAttribute="topMargin" id="Fp1-Mz-5iw"/>
+                                                <constraint firstItem="LPg-gV-MGq" firstAttribute="centerY" secondItem="gOl-4I-e03" secondAttribute="centerY" id="K9F-ag-rNC"/>
                                                 <constraint firstItem="wHg-N7-qYt" firstAttribute="bottom" secondItem="ZPT-wc-oNn" secondAttribute="bottom" constant="-5" id="Ohu-PG-VKe"/>
+                                                <constraint firstItem="gOl-4I-e03" firstAttribute="top" secondItem="6pH-jU-83W" secondAttribute="topMargin" id="PCv-LB-9YL"/>
                                                 <constraint firstItem="Xyu-6j-Hpp" firstAttribute="leading" secondItem="wHg-N7-qYt" secondAttribute="trailing" constant="2" id="QIY-bk-lfv"/>
-                                                <constraint firstItem="ZPT-wc-oNn" firstAttribute="leading" secondItem="LPg-gV-MGq" secondAttribute="trailing" constant="8" id="QKV-DM-FPk"/>
                                                 <constraint firstItem="XqR-0I-TSW" firstAttribute="bottom" secondItem="Xyu-6j-Hpp" secondAttribute="bottom" id="T32-tt-Z3N"/>
                                                 <constraint firstItem="Xyu-6j-Hpp" firstAttribute="bottom" secondItem="wHg-N7-qYt" secondAttribute="bottom" id="VMw-Ss-wq1"/>
+                                                <constraint firstItem="ZPT-wc-oNn" firstAttribute="leading" secondItem="gOl-4I-e03" secondAttribute="trailing" constant="8" id="WaN-VN-7kH"/>
                                                 <constraint firstItem="T7T-o5-ji6" firstAttribute="trailing" secondItem="6pH-jU-83W" secondAttribute="trailingMargin" constant="-10" id="k5B-Pz-0YZ"/>
-                                                <constraint firstItem="LPg-gV-MGq" firstAttribute="leading" secondItem="6pH-jU-83W" secondAttribute="leadingMargin" id="kmX-IT-IEy"/>
+                                                <constraint firstItem="LPg-gV-MGq" firstAttribute="centerX" secondItem="gOl-4I-e03" secondAttribute="centerX" id="kzb-Rt-Ufi"/>
                                                 <constraint firstItem="XqR-0I-TSW" firstAttribute="width" secondItem="XqR-0I-TSW" secondAttribute="height" multiplier="1:1" id="nut-Jr-1tX"/>
                                                 <constraint firstItem="wHg-N7-qYt" firstAttribute="leading" secondItem="ZPT-wc-oNn" secondAttribute="trailing" constant="7.5" id="prQ-0j-aj2"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="T7T-o5-ji6" secondAttribute="bottom" constant="10" id="qwi-PT-IsH"/>
@@ -667,6 +677,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="addBtnHeightConstraint" destination="tGx-QA-Nut" id="vPg-my-xMN"/>
+                                            <outlet property="addBtnImage" destination="LPg-gV-MGq" id="cEp-Xd-pLI"/>
                                             <outlet property="descriptionLabel" destination="T7T-o5-ji6" id="CWH-dZ-f8O"/>
                                             <outlet property="dot1" destination="wHg-N7-qYt" id="xjH-dm-rDS"/>
                                             <outlet property="dot1WidthConstraint" destination="hIE-yx-Duf" id="8kl-4W-Yb8"/>

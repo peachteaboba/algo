@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlgosTableViewCell: UITableViewCell {
+class AlgosTableViewCell: UITableViewCell, AnimateCheckMarkDelegate {
 
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -19,6 +19,8 @@ class AlgosTableViewCell: UITableViewCell {
     @IBOutlet weak var dot1WidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var dot2WidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var dot3WidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var addBtnImage: UIImageView!
+    @IBOutlet weak var addBtnHeightConstraint: NSLayoutConstraint!
   
     
     
@@ -209,6 +211,58 @@ class AlgosTableViewCell: UITableViewCell {
         }
         
     }
+    
+    
+    
+    func AnimateCheckMark() {
+        
+        print("Animating check mark now!! ----> cell name ----> \(self._model?.title)")
+        
+        self.addBtnImage.image = UIImage(named: "check")
+        self.addBtnHeightConstraint.constant = 0
+        
+        
+        
+        // Set a delay to execute the animation :::::::::::::::::::::::::::::::::::::::
+        let when = DispatchTime.now() + 0.05 // change to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            // Your code with delay
+            self.performCheckAnimation()
+        }
+        // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+       
+        
+    }
+    
+    
+    func performCheckAnimation(){
+        
+        
+        self.addBtnHeightConstraint.constant = 50
+        
+        
+        // Code to start animation ---------------------------
+        self.setNeedsLayout()
+        UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: [UIViewAnimationOptions.allowUserInteraction], animations: {
+            
+            
+            
+            
+            self.layoutIfNeeded()
+            
+            
+            
+            
+        }) { (finished) in
+            if finished {
+                // Code to execute after animation...
+            }
+        } // -------------------------------------------------
+        
+    }
+    
+    
+    
     
     
     

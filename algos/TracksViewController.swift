@@ -341,9 +341,9 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 appDel.tracksArray = self.tracksArray
             } else {
                 
-                for track in self.tracksArray {
-                    print(track.name!)
-                }
+//                for track in self.tracksArray {
+//                    print(track.name!)
+//                }
                 
             }
 
@@ -371,9 +371,9 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 appDel.algosArray = self.algosArray
                 
             } else {
-                for algo in self.algosArray {
-                    print("-----------------> \(algo.title!)")
-                }
+//                for algo in self.algosArray {
+//                    print("-----------------> \(algo.title!)")
+//                }
             }
         } else {
             // Algos are already cached in appDel
