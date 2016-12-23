@@ -21,6 +21,8 @@ class AlgosTableViewCell: UITableViewCell, AnimateCheckMarkDelegate {
     @IBOutlet weak var dot3WidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var addBtnImage: UIImageView!
     @IBOutlet weak var addBtnHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var arrowImage: UIImageView!
+    @IBOutlet weak var numPhotosLabel: UILabel!
   
     
     
@@ -42,6 +44,17 @@ class AlgosTableViewCell: UITableViewCell, AnimateCheckMarkDelegate {
     
     // Helper functions -----------------------
     func setControls(){
+        self.arrowImage.isHidden = true
+        
+        
+        self.numPhotosLabel.text = "\((self._model?.numPhotos)!)"
+        self.numPhotosLabel.textColor = self.UIColorFromRGB(0xDCDFE3) // light grey
+        
+        if self._model?.numPhotos == 0 {
+            self.numPhotosLabel.isHidden = true
+        }
+        
+        
         self.titleLabel.text = self._model?.title
         self.descriptionLabel.text = self._model?.desc
         
@@ -57,11 +70,29 @@ class AlgosTableViewCell: UITableViewCell, AnimateCheckMarkDelegate {
         self.dot2WidthConstraint.constant = 6
         self.dot3WidthConstraint.constant = 6
         
+        // Animate the checkmark is the algo is completed!
+        if (self._model?.isCompleted)! {
+            self.imageView?.isHidden = true
+        }
+        
+        
+        
         // Set a delay to execute the animation :::::::::::::::::::::::::::::::::::::::
-        let when = DispatchTime.now() + 0.25 // change to desired number of seconds
+        let when = DispatchTime.now() + 0.2 // change to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
             // Your code with delay
             self.animateDots(status: (self._model?.difficulty)!)
+            
+            self.imageView?.isHidden = false
+
+            
+            // Animate the checkmark is the algo is completed!
+            if (self._model?.isCompleted)! {
+                self.AnimateCheckMark()
+            }
+            
+            
+            
         }
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         
@@ -218,9 +249,18 @@ class AlgosTableViewCell: UITableViewCell, AnimateCheckMarkDelegate {
         
         print("Animating check mark now!! ----> cell name ----> \(self._model?.title)")
         
+        
+        // This will only trigger if the method is called after adding a new photo
+        if !(self._model?.isCompleted)! {
+            self._model?.isCompleted = true
+            self._model?.completedOn = NSDate()
+        }
+        
+        
         self.addBtnImage.image = UIImage(named: "check")
         self.addBtnHeightConstraint.constant = 0
         
+        self.arrowImage.isHidden = false
         
         
         // Set a delay to execute the animation :::::::::::::::::::::::::::::::::::::::
@@ -235,6 +275,7 @@ class AlgosTableViewCell: UITableViewCell, AnimateCheckMarkDelegate {
     }
     
     
+    
     func performCheckAnimation(){
         
         
@@ -243,7 +284,7 @@ class AlgosTableViewCell: UITableViewCell, AnimateCheckMarkDelegate {
         
         // Code to start animation ---------------------------
         self.setNeedsLayout()
-        UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: [UIViewAnimationOptions.allowUserInteraction], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: [UIViewAnimationOptions.allowUserInteraction], animations: {
             
             
             

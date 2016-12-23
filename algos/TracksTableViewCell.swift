@@ -80,10 +80,15 @@ class TracksTableViewCell: UITableViewCell {
         self.progressBar.backgroundColor = self.UIColorFromRGB(0x25C271) // green
         self.progressTextLabel.font = .systemFont(ofSize: 13)
         
+        
+        
+        
+
+        
         let total = self._model?.totalM
         let completed = self._model?.completedM
         
-        self.progressTextLabel.textColor = self.UIColorFromRGB(0xDCDFE3) // light grey
+        self.progressTextLabel.textColor = self.UIColorFromRGB(0xD4D6D9) // light grey
         self.progressTextLabel.text = "\(completed!)/\(total!)"
         
         
@@ -93,37 +98,33 @@ class TracksTableViewCell: UITableViewCell {
         
         
         
-        
-        
         if percentage < 0.25 {
             self.progressBar.backgroundColor = self.UIColorFromRGB(0xFA9A2D) // orange
         } else if percentage < 0.5 {
             self.progressBar.backgroundColor = self.UIColorFromRGB(0xF7E160) // yellow
         } else if percentage < 0.75 {
             self.progressBar.backgroundColor = self.UIColorFromRGB(0x25C271) // green
-        } else if percentage == 1.0 {
-            self.progressBar.backgroundColor = self.UIColorFromRGB(0xFFFFFF) // white
+        } else if percentage >= 1.0 {
+            self.progressBar.backgroundColor = self.UIColorFromRGB(0x25C271) // green
             
             
             self.backgroundColor = self.UIColorFromRGB(0x873ae9) // purp
             self.nameLabel.textColor = self.UIColorFromRGB(0xFFFFFF) // white
             self.descriptionLabel.textColor = self.UIColorFromRGB(0x6119bc) // dark purp
-            self.progressTextLabel.textColor = self.UIColorFromRGB(0x6119bc) // dark purp
+            self.progressTextLabel.textColor = self.UIColorFromRGB(0xffffff) // white
 //            self.progressTextLabel.font = .systemFont(ofSize: 20)
             
             self.myCoolImage.image = UIImage(named: "codeD")
 
         }
         
+
         
-//        if self._model?.track == 1 {
-//            self.myCoolImage.image = UIImage(named: "t1")
-//        } else if self._model?.track == 2 {
-//            self.myCoolImage.image = UIImage(named: "t2")
-//        } else if self._model?.track == 3 {
-//            self.myCoolImage.image = UIImage(named: "t3")
-//        }
-//        
+        
+        
+        
+        
+        
         
         
     }

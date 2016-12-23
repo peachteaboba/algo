@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import CoreData
 
 class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: Variables ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var trackData:Track?
     var algosArray:[Algo]?
+    var algoPlace:Int16?
+    
+    
+    var algoTargeted:Algo?
+    
+    
     
     // Image Picker Stuffs ---------------------------
     var picker = UIImagePickerController()
@@ -124,16 +132,9 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
         cell.model = (self.algosArray?[indexPath.row])!
         
         
-        
-        
-        
         // Set dynamic cell height
         self.algosTableView.estimatedRowHeight = 80
         self.algosTableView.rowHeight = UITableViewAutomaticDimension
-        
-        
-        
-        
         
 
         return cell
@@ -152,13 +153,61 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
         
             print("cell tapped ----> index: \(indexPath.row) ----> isCompleted: \((self.algosArray?[indexPath.row].isCompleted)!)")
             
+            
+            let cell = self.algosTableView.cellForRow(at: indexPath) as! AlgosTableViewCell
+           
+            self.algoTargeted = cell.model
+            
             // if isCompleted is false then open the camera to take photo
-            if !(self.algosArray?[indexPath.row].isCompleted)! {
-                
-                let cell = self.algosTableView.cellForRow(at: indexPath) as! AlgosTableViewCell
+            if !cell.model.isCompleted {
+  
                 self.checkMarkDelegate = cell
                 
+                self.algoPlace = cell.model.place
+                
+                
                 self.openCamera()
+            } else {
+                // This algo is already completed, go to algo details page
+                
+                // Instantiate a storyboard VC and downcasting to the specific type
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "AlgoDetailsVC") as! AlgoDetailsViewController
+
+                // Setting some data
+                vc.algoData = self.algoTargeted
+                
+                
+                // Fetch all images for this algo from core data
+                let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Photo")
+                
+                
+                print((self.algoTargeted?.place)!)
+                
+                
+                
+                let placePredicate = NSPredicate(format: "algoPlace = %d", (self.algoTargeted?.place)!)
+                let trackPredicate = NSPredicate(format: "track = %d", (self.algoTargeted?.track)!)
+                
+                request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [placePredicate, trackPredicate])
+                
+                do {
+                    let results = try self.context.fetch(request)
+                    let tempArr = results as! [Photo]
+                    
+                    vc.photosArray = tempArr
+                    
+                    print("Got all the photos from CoreData")
+                    
+                } catch {
+                    print("\(error)")
+                }
+                
+                
+
+                // Presenting the vc that we instantiated
+                vc.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+                self.present(vc, animated: true, completion: nil)
+                
             }
         
         }
@@ -222,29 +271,62 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
         
         print("gotcha!")
         
-        // animate the checkmark 
+        // Animate the checkmark
         self.checkMarkDelegate?.AnimateCheckMark()
 
+        // Save the photo object to CoreData and adjust cache accordingly
+        self.saveImage()
         
         
-        
-        // save the photo object to CoreData
-        
-        
-        
-        // Update CoreDate stuffs accordingly 
-        
-        
-        // Update cached appDel stuffs accordingly
-        
-        
-        
-        
-        
+
         
     }
     
 
+    
+    func saveImage(){
+        if self.photo != nil {
+            
+            // Create Photo object :::::::::::::::::::::::::::::::
+            let photo = NSEntityDescription.insertNewObject(forEntityName: "Photo",  into: context) as! Photo
+            
+            if let imageToSave = self.photo {
+                let data = UIImagePNGRepresentation(imageToSave)
+                photo.image = data as NSData?
+            }
+            
+            photo.comment = ""
+            photo.timestamp = NSDate()
+            
+            photo.track = (self.trackData?.track)!
+            photo.algoPlace = self.algoPlace!
+            // ::::::::::::::::::::::::::::::::::::::::::::::::::::
+            print(photo)
+            
+            
+            
+            // Update algos and tracks CoreDate stuffs accordingly ++++++++++++++++
+            self.trackData?.completedM += 1
+            self.algoTargeted?.numPhotos += 1
+            
+            // Save CodeData context ++++++++++++++++++++++++++++++++++++++++++++++
+            if self.context.hasChanges {
+                do {
+                    try self.context.save()
+                    print("Success")
+                } catch {
+                    print("\(error)")
+                }
+            }
+
+        } else {
+            print("Photo is nil...")
+        }
+    }
+    
+    
+    
+    
     
     
     

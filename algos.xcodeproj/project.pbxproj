@@ -21,6 +21,7 @@
 		8A3597031E09F23B00A0C4AE /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3597021E09F23B00A0C4AE /* SWRevealViewController.m */; };
 		8A6841221E0B2A0B00E18978 /* AlgosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6841211E0B2A0B00E18978 /* AlgosTableViewCell.swift */; };
 		8AA3DD901E0C774300CFA03A /* AnimateCheckMarkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3DD8F1E0C774300CFA03A /* AnimateCheckMarkDelegate.swift */; };
+		8AA3DD921E0C895600CFA03A /* AlgoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3DD911E0C895600CFA03A /* AlgoDetailsViewController.swift */; };
 		8AB64EBB1E09CB15009F1A94 /* TrackDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB64EBA1E09CB15009F1A94 /* TrackDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		8A3597021E09F23B00A0C4AE /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../Desktop - Andy’s MacBook/algos/algos/SWRevealFiles/SWRevealViewController.m"; sourceTree = "<group>"; };
 		8A6841211E0B2A0B00E18978 /* AlgosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlgosTableViewCell.swift; sourceTree = "<group>"; };
 		8AA3DD8F1E0C774300CFA03A /* AnimateCheckMarkDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateCheckMarkDelegate.swift; sourceTree = "<group>"; };
+		8AA3DD911E0C895600CFA03A /* AlgoDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlgoDetailsViewController.swift; sourceTree = "<group>"; };
 		8AB64EBA1E09CB15009F1A94 /* TrackDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +84,7 @@
 				8A0565281E0884FE00E263FA /* MenuViewController.swift */,
 				8A05652A1E0885B100E263FA /* TracksViewController.swift */,
 				8AB64EBA1E09CB15009F1A94 /* TrackDetailsViewController.swift */,
+				8AA3DD911E0C895600CFA03A /* AlgoDetailsViewController.swift */,
 				8A0565321E0898C800E263FA /* ProfileViewController.swift */,
 				8A0565341E0898EC00E263FA /* LeaderboardViewController.swift */,
 				8A0565161E087C9100E263FA /* Main.storyboard */,
@@ -189,6 +192,7 @@
 				8A0565291E0884FE00E263FA /* MenuViewController.swift in Sources */,
 				8A0565331E0898C800E263FA /* ProfileViewController.swift in Sources */,
 				8A6841221E0B2A0B00E18978 /* AlgosTableViewCell.swift in Sources */,
+				8AA3DD921E0C895600CFA03A /* AlgoDetailsViewController.swift in Sources */,
 				8A05652B1E0885B100E263FA /* TracksViewController.swift in Sources */,
 				8A3597031E09F23B00A0C4AE /* SWRevealViewController.m in Sources */,
 				8A0565351E0898EC00E263FA /* LeaderboardViewController.swift in Sources */,
