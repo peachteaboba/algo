@@ -198,6 +198,17 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
                     
                     print("Got all the photos from CoreData")
                     
+                    
+                    
+                    // Convert NSData to UIImage and save in array ----------------------------------------
+                    // **** Remember to cache these images later!!! ****
+                    for photo in tempArr {
+                        let image : UIImage = UIImage(data: photo.image as! Data)!
+                        vc.imagesArray.append(image)
+                    }
+                    
+                    
+                    
                 } catch {
                     print("\(error)")
                 }

@@ -22,6 +22,8 @@
 		8A6841221E0B2A0B00E18978 /* AlgosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6841211E0B2A0B00E18978 /* AlgosTableViewCell.swift */; };
 		8AA3DD901E0C774300CFA03A /* AnimateCheckMarkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3DD8F1E0C774300CFA03A /* AnimateCheckMarkDelegate.swift */; };
 		8AA3DD921E0C895600CFA03A /* AlgoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3DD911E0C895600CFA03A /* AlgoDetailsViewController.swift */; };
+		8AA3DD991E0CE39600CFA03A /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3DD981E0CE39600CFA03A /* PhotosTableViewCell.swift */; };
+		8AA3DD9B1E0CF5C500CFA03A /* PhotoMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3DD9A1E0CF5C500CFA03A /* PhotoMenuDelegate.swift */; };
 		8AB64EBB1E09CB15009F1A94 /* TrackDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB64EBA1E09CB15009F1A94 /* TrackDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		8A6841211E0B2A0B00E18978 /* AlgosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlgosTableViewCell.swift; sourceTree = "<group>"; };
 		8AA3DD8F1E0C774300CFA03A /* AnimateCheckMarkDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateCheckMarkDelegate.swift; sourceTree = "<group>"; };
 		8AA3DD911E0C895600CFA03A /* AlgoDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlgoDetailsViewController.swift; sourceTree = "<group>"; };
+		8AA3DD981E0CE39600CFA03A /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
+		8AA3DD9A1E0CF5C500CFA03A /* PhotoMenuDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoMenuDelegate.swift; sourceTree = "<group>"; };
 		8AB64EBA1E09CB15009F1A94 /* TrackDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,7 +98,9 @@
 				8A0565191E087C9100E263FA /* algos.xcdatamodeld */,
 				8A05653B1E08D2C400E263FA /* TracksTableViewCell.swift */,
 				8A6841211E0B2A0B00E18978 /* AlgosTableViewCell.swift */,
+				8AA3DD981E0CE39600CFA03A /* PhotosTableViewCell.swift */,
 				8AA3DD8F1E0C774300CFA03A /* AnimateCheckMarkDelegate.swift */,
+				8AA3DD9A1E0CF5C500CFA03A /* PhotoMenuDelegate.swift */,
 			);
 			path = algos;
 			sourceTree = "<group>";
@@ -191,7 +197,9 @@
 				8A0565131E087C9100E263FA /* AppDelegate.swift in Sources */,
 				8A0565291E0884FE00E263FA /* MenuViewController.swift in Sources */,
 				8A0565331E0898C800E263FA /* ProfileViewController.swift in Sources */,
+				8AA3DD991E0CE39600CFA03A /* PhotosTableViewCell.swift in Sources */,
 				8A6841221E0B2A0B00E18978 /* AlgosTableViewCell.swift in Sources */,
+				8AA3DD9B1E0CF5C500CFA03A /* PhotoMenuDelegate.swift in Sources */,
 				8AA3DD921E0C895600CFA03A /* AlgoDetailsViewController.swift in Sources */,
 				8A05652B1E0885B100E263FA /* TracksViewController.swift in Sources */,
 				8A3597031E09F23B00A0C4AE /* SWRevealViewController.m in Sources */,

@@ -93,17 +93,15 @@ class TracksTableViewCell: UITableViewCell {
         
         
         let percentage = CGFloat(completed!) / CGFloat(total!)
-        self.progressBarWidthConstraint.constant = self.progressBarBGWidthConstraint.constant * percentage
-//        print("\(self._model?.name) -----> \(self.progressBarWidthConstraint.constant) ----> \(self.progressBarBGWidthConstraint.constant) ---> percentage: \(percentage)")
+
         
+        print(percentage)
         
-        
-        if percentage < 0.25 {
+        if percentage <= 0.4 {
             self.progressBar.backgroundColor = self.UIColorFromRGB(0xFA9A2D) // orange
-        } else if percentage < 0.5 {
+            
+        } else if percentage <= 0.7 {
             self.progressBar.backgroundColor = self.UIColorFromRGB(0xF7E160) // yellow
-        } else if percentage < 0.75 {
-            self.progressBar.backgroundColor = self.UIColorFromRGB(0x25C271) // green
         } else if percentage >= 1.0 {
             self.progressBar.backgroundColor = self.UIColorFromRGB(0x25C271) // green
             
@@ -112,22 +110,47 @@ class TracksTableViewCell: UITableViewCell {
             self.nameLabel.textColor = self.UIColorFromRGB(0xFFFFFF) // white
             self.descriptionLabel.textColor = self.UIColorFromRGB(0x6119bc) // dark purp
             self.progressTextLabel.textColor = self.UIColorFromRGB(0xffffff) // white
-//            self.progressTextLabel.font = .systemFont(ofSize: 20)
             
             self.myCoolImage.image = UIImage(named: "codeD")
 
         }
         
-
+        // Set a delay to execute the animation :::::::::::::::::::::::::::::::::::::::
+        let when = DispatchTime.now() + 0.05 // change to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            // Your code with delay
+            self.animatePercentage(p: percentage)
+        }
+        // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        
+    }
+    
+    
+    func animatePercentage(p: CGFloat){
+        
+        self.progressBarWidthConstraint.constant = self.progressBarBGWidthConstraint.constant * p
         
         
         
-        
-        
+        // Code to start animation ---------------------------
+        self.setNeedsLayout()
+        UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: [UIViewAnimationOptions.allowUserInteraction], animations: {
+            self.layoutIfNeeded()
+      
+        }) { (finished) in
+            if finished {
+                // Code to execute after animation...
+            }
+        } // -------------------------------------------------
         
         
         
     }
+    
+    
+    
+    
+    
     
     // Helper function to set colors with Hex values
     func UIColorFromRGB(_ rgbValue: UInt) -> UIColor {
