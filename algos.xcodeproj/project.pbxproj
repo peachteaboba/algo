@@ -84,8 +84,8 @@
 			children = (
 				8A05652C1E0886FA00E263FA /* SWRevealViewController */,
 				8A0565121E087C9100E263FA /* AppDelegate.swift */,
-				8A06D1AA1E0F2DE400CF5754 /* View Controllers */,
 				8A0565161E087C9100E263FA /* Main.storyboard */,
+				8A06D1AA1E0F2DE400CF5754 /* View Controllers */,
 				8A05651C1E087C9100E263FA /* Assets.xcassets */,
 				8A05651E1E087C9100E263FA /* LaunchScreen.storyboard */,
 				8A0565211E087C9100E263FA /* Info.plist */,
