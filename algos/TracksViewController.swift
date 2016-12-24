@@ -38,7 +38,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         track2.desc = "Why did the developer quit his job? He didn't get []'s"
         track2.completedM = 0
         track2.completedO = 0
-        track2.totalM = 3
+        track2.totalM = 4
         track2.totalO = 0
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
