@@ -245,6 +245,7 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         // Delete the photo from coreData -----------------------------
         context.delete(self.photoToDelete!)
+        self.algoData?.numPhotos -= 1
 
         if self.context.hasChanges {
             do {
@@ -264,7 +265,10 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         // Update data in TrackDetailsViewController
         self.updateTDVCForDeleteDelegate?.HandlePhotoDeleted(algo: self.algoData!, index: self.algoIndex!)
         
-        
+        if self.algoData?.numPhotos == 0 {
+            // Return to Track Details VC
+            self.dismiss(animated: true, completion: nil)
+        }
         
         
     }

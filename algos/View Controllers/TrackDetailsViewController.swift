@@ -348,7 +348,7 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
         print("In the Track Details VC, updating data for photo delete")
         
         // Update info
-        self.algosArray?[index].numPhotos -= 1
+//        self.algosArray?[index].numPhotos -= 1
   
         
         if self.algosArray?[index].numPhotos == 0 {
