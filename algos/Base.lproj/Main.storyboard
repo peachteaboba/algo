@@ -463,15 +463,15 @@
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="50" id="ixo-F0-1sg"/>
+                                                                <constraint firstAttribute="height" constant="6" id="tsB-VV-uO3"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstItem="Iuj-gD-8FN" firstAttribute="top" secondItem="enG-79-z7c" secondAttribute="top" id="F2j-Rf-smm"/>
                                                         <constraint firstAttribute="height" constant="6" id="Gvy-tf-k71"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Iuj-gD-8FN" secondAttribute="bottom" id="Igx-7D-K0B"/>
                                                         <constraint firstAttribute="trailing" secondItem="Iuj-gD-8FN" secondAttribute="trailing" id="P0I-LM-UtS"/>
+                                                        <constraint firstItem="Iuj-gD-8FN" firstAttribute="centerY" secondItem="enG-79-z7c" secondAttribute="centerY" id="SHB-7Y-Aar"/>
                                                         <constraint firstAttribute="width" constant="120" id="x5c-B3-GGH"/>
                                                     </constraints>
                                                 </view>
@@ -501,7 +501,9 @@
                                             <outlet property="nameLabel" destination="IiS-bw-reO" id="LWi-Q2-huO"/>
                                             <outlet property="progressBar" destination="Iuj-gD-8FN" id="Idm-4a-keB"/>
                                             <outlet property="progressBarBG" destination="enG-79-z7c" id="cDr-fY-N4T"/>
+                                            <outlet property="progressBarBGHeightConstraint" destination="Gvy-tf-k71" id="hhi-lj-gGK"/>
                                             <outlet property="progressBarBGWidthConstraint" destination="x5c-B3-GGH" id="ltY-vr-M60"/>
+                                            <outlet property="progressBarHeightConstraint" destination="tsB-VV-uO3" id="gRx-4r-jqv"/>
                                             <outlet property="progressBarWidthConstraint" destination="ixo-F0-1sg" id="NwX-1c-Zwv"/>
                                             <outlet property="progressTextLabel" destination="cdb-jB-id4" id="g1S-BC-bJI"/>
                                         </connections>
@@ -642,26 +644,26 @@
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xyu-6j-Hpp">
-                                                    <rect key="frame" x="117" y="30" width="6" height="6"/>
+                                                    <rect key="frame" x="115" y="32" width="4" height="4"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Xyu-6j-Hpp" secondAttribute="height" multiplier="1:1" id="0nd-vV-Q3p"/>
-                                                        <constraint firstAttribute="width" constant="6" id="jfg-N9-t2H"/>
+                                                        <constraint firstAttribute="width" constant="4" id="jfg-N9-t2H"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XqR-0I-TSW">
-                                                    <rect key="frame" x="125" y="30" width="6" height="6"/>
+                                                    <rect key="frame" x="121" y="32" width="4" height="4"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="6" id="lfa-Js-QGS"/>
+                                                        <constraint firstAttribute="width" constant="4" id="lfa-Js-QGS"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wHg-N7-qYt">
-                                                    <rect key="frame" x="109" y="30" width="6" height="6"/>
+                                                    <rect key="frame" x="109" y="32" width="4" height="4"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="wHg-N7-qYt" secondAttribute="height" multiplier="1:1" id="QML-zB-Tfo"/>
-                                                        <constraint firstAttribute="width" constant="6" id="hIE-yx-Duf"/>
+                                                        <constraint firstAttribute="width" constant="4" id="hIE-yx-Duf"/>
                                                     </constraints>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowRight" translatesAutoresizingMaskIntoConstraints="NO" id="JRf-Wy-bRC">

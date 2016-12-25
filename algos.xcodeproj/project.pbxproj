@@ -24,6 +24,7 @@
 		8A06D1B61E0F2DE400CF5754 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06D1AF1E0F2DE400CF5754 /* ProfileViewController.swift */; };
 		8A06D1B71E0F2DE400CF5754 /* TrackDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06D1B01E0F2DE400CF5754 /* TrackDetailsViewController.swift */; };
 		8A06D1B81E0F2DE400CF5754 /* TracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06D1B11E0F2DE400CF5754 /* TracksViewController.swift */; };
+		8A06D1BA1E0F6D5900CF5754 /* UpdateTDVCForPhotoDeleteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06D1B91E0F6D5900CF5754 /* UpdateTDVCForPhotoDeleteDelegate.swift */; };
 		8A3597031E09F23B00A0C4AE /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3597021E09F23B00A0C4AE /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		8A06D1AF1E0F2DE400CF5754 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8A06D1B01E0F2DE400CF5754 /* TrackDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackDetailsViewController.swift; sourceTree = "<group>"; };
 		8A06D1B11E0F2DE400CF5754 /* TracksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksViewController.swift; sourceTree = "<group>"; };
+		8A06D1B91E0F6D5900CF5754 /* UpdateTDVCForPhotoDeleteDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTDVCForPhotoDeleteDelegate.swift; sourceTree = "<group>"; };
 		8A3597011E09F23B00A0C4AE /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../Desktop - Andy’s MacBook/algos/algos/SWRevealFiles/SWRevealViewController.h"; sourceTree = "<group>"; };
 		8A3597021E09F23B00A0C4AE /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../Desktop - Andy’s MacBook/algos/algos/SWRevealFiles/SWRevealViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +113,7 @@
 			children = (
 				8A06D19F1E0F2D6200CF5754 /* AnimateCheckMarkDelegate.swift */,
 				8A06D1A01E0F2D6200CF5754 /* PhotoMenuDelegate.swift */,
+				8A06D1B91E0F6D5900CF5754 /* UpdateTDVCForPhotoDeleteDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -118,9 +121,9 @@
 		8A06D1A31E0F2DBF00CF5754 /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8A06D1A61E0F2DBF00CF5754 /* TracksTableViewCell.swift */,
 				8A06D1A41E0F2DBF00CF5754 /* AlgosTableViewCell.swift */,
 				8A06D1A51E0F2DBF00CF5754 /* PhotosTableViewCell.swift */,
-				8A06D1A61E0F2DBF00CF5754 /* TracksTableViewCell.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -128,13 +131,13 @@
 		8A06D1AA1E0F2DE400CF5754 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8A06D1AB1E0F2DE400CF5754 /* AlgoDetailsViewController.swift */,
-				8A06D1AC1E0F2DE400CF5754 /* ContainerViewController.swift */,
-				8A06D1AD1E0F2DE400CF5754 /* LeaderboardViewController.swift */,
-				8A06D1AE1E0F2DE400CF5754 /* MenuViewController.swift */,
 				8A06D1AF1E0F2DE400CF5754 /* ProfileViewController.swift */,
-				8A06D1B01E0F2DE400CF5754 /* TrackDetailsViewController.swift */,
+				8A06D1AD1E0F2DE400CF5754 /* LeaderboardViewController.swift */,
+				8A06D1AC1E0F2DE400CF5754 /* ContainerViewController.swift */,
+				8A06D1AE1E0F2DE400CF5754 /* MenuViewController.swift */,
 				8A06D1B11E0F2DE400CF5754 /* TracksViewController.swift */,
+				8A06D1B01E0F2DE400CF5754 /* TrackDetailsViewController.swift */,
+				8A06D1AB1E0F2DE400CF5754 /* AlgoDetailsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				8A06D1B61E0F2DE400CF5754 /* ProfileViewController.swift in Sources */,
 				8A06D1B21E0F2DE400CF5754 /* AlgoDetailsViewController.swift in Sources */,
 				8A06D1A81E0F2DBF00CF5754 /* PhotosTableViewCell.swift in Sources */,
+				8A06D1BA1E0F6D5900CF5754 /* UpdateTDVCForPhotoDeleteDelegate.swift in Sources */,
 				8A06D1B41E0F2DE400CF5754 /* LeaderboardViewController.swift in Sources */,
 				8A06D1A91E0F2DBF00CF5754 /* TracksTableViewCell.swift in Sources */,
 				8A06D1B81E0F2DE400CF5754 /* TracksViewController.swift in Sources */,

@@ -27,7 +27,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         track1.desc = "The Basic 13. #PumpkinSpicedLatte"
         track1.completedM = 0
         track1.completedO = 0
-        track1.totalM = 6
+        track1.totalM = 100
         track1.totalO = 0
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
@@ -38,7 +38,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         track2.desc = "Why did the developer quit his job? He didn't get []'s"
         track2.completedM = 0
         track2.completedO = 0
-        track2.totalM = 4
+        track2.totalM = 100
         track2.totalO = 0
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
@@ -49,7 +49,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         track3.desc = "The Wifi Password. We're not savages."
         track3.completedM = 0
         track3.completedO = 0
-        track3.totalM = 1
+        track3.totalM = 100
         track3.totalO = 0
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
@@ -60,7 +60,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         track4.desc = "A single-file line of elephants"
         track4.completedM = 0
         track4.completedO = 0
-        track4.totalM = 1
+        track4.totalM = 100
         track4.totalO = 0
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
@@ -71,7 +71,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         track5.desc = "Basically like Inception.."
         track5.completedM = 0
         track5.completedO = 0
-        track5.totalM = 1
+        track5.totalM = 100
         track5.totalO = 0
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
@@ -82,7 +82,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         track6.desc = "He didn't get Arrays.."
         track6.completedM = 0
         track6.completedO = 0
-        track6.totalM = 1
+        track6.totalM = 100
         track6.totalO = 5
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
@@ -93,7 +93,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         track7.desc = "Tacocat spelled backwards is Tacocat."
         track7.completedM = 0
         track7.completedO = 0
-        track7.totalM = 1
+        track7.totalM = 100
         track7.totalO = 0
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
@@ -104,7 +104,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         track8.desc = "SPACESHIPS!"
         track8.completedM = 0
         track8.completedO = 0
-        track8.totalM = 1
+        track8.totalM = 100
         track8.totalO = 0
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
@@ -115,7 +115,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         track9.desc = "Just sort it out.."
         track9.completedM = 0
         track9.completedO = 0
-        track9.totalM = 1
+        track9.totalM = 100
         track9.totalO = 0
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
@@ -126,7 +126,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         track10.desc = "Please make it stop.."
         track10.completedM = 0
         track10.completedO = 0
-        track10.totalM = 1
+        track10.totalM = 100
         track10.totalO = 0
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
@@ -137,7 +137,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         track11.desc = "'Bleep Bloop Blop Bleep Boob' - R2-D2"
         track11.completedM = 0
         track11.completedO = 0
-        track11.totalM = 1
+        track11.totalM = 100
         track11.totalO = 0
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
@@ -148,7 +148,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         track12.desc = "'I find that answer vague and inconvincing' - K-2SO"
         track12.completedM = 0
         track12.completedO = 0
-        track12.totalM = 1
+        track12.totalM = 100
         track12.totalO = 0
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
@@ -372,7 +372,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {
             // Tracks are already cached in appDel
             print("got some cool stuff from the appDel (tracksArray)")
-            print(appDel.tracksArray!)
+//            print(appDel.tracksArray!)
             self.tracksArray = appDel.tracksArray!
             self.tracksTableView.reloadData()
         }
@@ -400,7 +400,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {
             // Algos are already cached in appDel
             print("got some cool stuff from the appDel (algosArray)")
-            print(appDel.algosArray!)
+//            print(appDel.algosArray!)
             self.algosArray = appDel.algosArray!
         }
         
@@ -558,8 +558,39 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let tempArr = results as! [Algo]
             self.algosArray = tempArr.sorted { $0.place < $1.place }
             print("Got all the algos from CoreData")
-//            print(self.algosArray)
+
             
+            
+            
+            
+            // Calculate total number of algos for each track
+            if self.algosArray.count != 0  && self.tracksArray.count != 0 {
+                
+                var c = 0
+                for track in self.tracksArray {
+                    c = 0
+                    for algo in self.algosArray {
+                        if algo.track == track.track {
+                            c += 1
+                        }
+                    }
+                    if c > 0 {
+                       track.totalM = Int16(c)
+                    }
+                }
+            }
+            
+            
+            
+            if self.context.hasChanges {
+                do {
+                    try self.context.save()
+                    print("Successfully updated total number of algos in each track")
+
+                } catch {
+                    print("\(error)")
+                }
+            }
             
             
             

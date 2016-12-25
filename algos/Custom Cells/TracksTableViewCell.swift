@@ -15,8 +15,10 @@ class TracksTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var progressBarBG: UIView!
     @IBOutlet weak var progressBarBGWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var progressBarBGHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var progressBar: UIView!
     @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var progressBarHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var progressTextLabel: UILabel!
 
     func setInit(){
@@ -65,18 +67,19 @@ class TracksTableViewCell: UITableViewCell {
         self.descriptionLabel.text = self._model?.desc
         self.descriptionLabel.textColor = self.UIColorFromRGB(0xDCDFE3) // light grey
         
-        self.progressBarBG.layer.cornerRadius = 3
-        self.progressBarBG.backgroundColor = self.UIColorFromRGB(0xEDF0F2) // lighter grey
         
-//        self.progressBarBGWidthConstraint.constant = 90
+        // Progress Bar BG
+        self.progressBarBGHeightConstraint.constant = 4
+        self.progressBarBG.layer.cornerRadius = self.progressBarBGHeightConstraint.constant / 2
+        self.progressBarBG.backgroundColor = self.UIColorFromRGB(0xEDF0F2) // lighter grey
         
 
         
         
         
-        
-        
-        self.progressBar.layer.cornerRadius = 3
+        // Progress Bar
+        self.progressBarHeightConstraint.constant = 6
+        self.progressBar.layer.cornerRadius = self.progressBarHeightConstraint.constant / 2
         self.progressBar.backgroundColor = self.UIColorFromRGB(0x25C271) // green
         self.progressTextLabel.font = .systemFont(ofSize: 13)
         
@@ -95,12 +98,9 @@ class TracksTableViewCell: UITableViewCell {
         let percentage = CGFloat(completed!) / CGFloat(total!)
 
         
-        print(percentage)
-        
-        if percentage <= 0.4 {
+        if percentage <= 0.3 {
             self.progressBar.backgroundColor = self.UIColorFromRGB(0xFA9A2D) // orange
-            
-        } else if percentage <= 0.7 {
+        } else if percentage <= 0.6 {
             self.progressBar.backgroundColor = self.UIColorFromRGB(0xF7E160) // yellow
         } else if percentage >= 1.0 {
             self.progressBar.backgroundColor = self.UIColorFromRGB(0x25C271) // green

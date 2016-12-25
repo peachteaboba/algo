@@ -58,37 +58,57 @@ class AlgosTableViewCell: UITableViewCell, AnimateCheckMarkDelegate {
         self.titleLabel.text = self._model?.title
         self.descriptionLabel.text = self._model?.desc
         
-        self.dot1.layer.cornerRadius = 3
-        self.dot2.layer.cornerRadius = 3
-        self.dot3.layer.cornerRadius = 3
+        
+        
+        self.dot1WidthConstraint.constant = 4.5
+        self.dot2WidthConstraint.constant = 4.5
+        self.dot3WidthConstraint.constant = 4.5
+        
+        
+        self.dot1.layer.cornerRadius = self.dot1WidthConstraint.constant / 2
+        self.dot2.layer.cornerRadius = self.dot2WidthConstraint.constant / 2
+        self.dot3.layer.cornerRadius = self.dot3WidthConstraint.constant / 2
         
         self.dot1.backgroundColor = self.UIColorFromRGB(0xDCDFE3) // light grey
         self.dot2.backgroundColor = self.UIColorFromRGB(0xDCDFE3) // light grey
         self.dot3.backgroundColor = self.UIColorFromRGB(0xDCDFE3) // light grey
         
-        self.dot1WidthConstraint.constant = 6
-        self.dot2WidthConstraint.constant = 6
-        self.dot3WidthConstraint.constant = 6
         
-        // Animate the checkmark is the algo is completed!
+        // Animate the checkmark if the algo is completed!
         if (self._model?.isCompleted)! {
             self.imageView?.isHidden = true
         }
         
+        let status = (self._model?.difficulty)!
+        
+        if status == "1" {
+            self.dot1.backgroundColor = self.UIColorFromRGB(0x25C271) // green
+        } else if status == "2" {
+            self.dot1.backgroundColor = self.UIColorFromRGB(0xF7E160) // yellow
+            self.dot2.backgroundColor = self.UIColorFromRGB(0xF7E160) // yellow
+        } else if status == "3" {
+            self.dot1.backgroundColor = self.UIColorFromRGB(0xFA9A2D) // orange
+            self.dot2.backgroundColor = self.UIColorFromRGB(0xFA9A2D) // orange
+            self.dot3.backgroundColor = self.UIColorFromRGB(0xFA9A2D) // orange
+        }
         
         
         // Set a delay to execute the animation :::::::::::::::::::::::::::::::::::::::
         let when = DispatchTime.now() + 0.2 // change to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
             // Your code with delay
-            self.animateDots(status: (self._model?.difficulty)!)
+//            self.animateDots(status: (self._model?.difficulty)!)
+            
+            
+            
+            
             
             self.imageView?.isHidden = false
 
             
             // Animate the checkmark is the algo is completed!
             if (self._model?.isCompleted)! {
-                self.AnimateCheckMark()
+                self.AnimateCheckMark(from: "cell")
             }
             
             
@@ -99,155 +119,157 @@ class AlgosTableViewCell: UITableViewCell, AnimateCheckMarkDelegate {
     }
     
     
-    func animateDots(status: String){
-        
-        
-        
-        self.dot1WidthConstraint.constant = 10
-        
-        
-        // Code to start animation
-        self.setNeedsLayout()
-        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.7, options: [UIViewAnimationOptions.allowUserInteraction], animations: {
-            self.layoutIfNeeded()
-            
-            self.dot1.layer.cornerRadius = 5
-            
-            if status == "1" {
-                self.dot1.backgroundColor = self.UIColorFromRGB(0x25C271) // green
-            } else if status == "2" {
-                self.dot1.backgroundColor = self.UIColorFromRGB(0xF7E160) // yellow
-            } else if status == "3" {
-                self.dot1.backgroundColor = self.UIColorFromRGB(0xFA9A2D) // orange
-            }
-
-        }) { (finished) in
-            if finished {
-                // Code to execute after animation...
-                
-                
-                if status != "1" {
-                    self.animateDot2(status: status)
-                }
-                
-                
-                self.dot1WidthConstraint.constant = 6
-                
-                
-                // Code to start animation ---------------------------
-                self.setNeedsLayout()
-                UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.7, options: [UIViewAnimationOptions.allowUserInteraction], animations: {
-                    self.layoutIfNeeded()
-                    self.dot1.layer.cornerRadius = 3
-                }) { (finished) in
-                    if finished {
-                        // Code to execute after animation...
-                    }
-                } // -------------------------------------------------
-                
-
-                
-                
-            }
-        }
-        
-    }
+//    func animateDots(status: String){
+//        
+//        
+//        
+//        self.dot1WidthConstraint.constant = 10
+//        
+//        
+//        // Code to start animation
+//        self.setNeedsLayout()
+//        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.7, options: [UIViewAnimationOptions.allowUserInteraction], animations: {
+//            self.layoutIfNeeded()
+//            
+//            self.dot1.layer.cornerRadius = 5
+//            
+//            if status == "1" {
+//                self.dot1.backgroundColor = self.UIColorFromRGB(0x25C271) // green
+//            } else if status == "2" {
+//                self.dot1.backgroundColor = self.UIColorFromRGB(0xF7E160) // yellow
+//            } else if status == "3" {
+//                self.dot1.backgroundColor = self.UIColorFromRGB(0xFA9A2D) // orange
+//            }
+//
+//        }) { (finished) in
+//            if finished {
+//                // Code to execute after animation...
+//                
+//                
+//                if status != "1" {
+//                    self.animateDot2(status: status)
+//                }
+//                
+//                
+//                self.dot1WidthConstraint.constant = 6
+//                
+//                
+//                // Code to start animation ---------------------------
+//                self.setNeedsLayout()
+//                UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.7, options: [UIViewAnimationOptions.allowUserInteraction], animations: {
+//                    self.layoutIfNeeded()
+//                    self.dot1.layer.cornerRadius = 3
+//                }) { (finished) in
+//                    if finished {
+//                        // Code to execute after animation...
+//                    }
+//                } // -------------------------------------------------
+//                
+//
+//                
+//                
+//            }
+//        }
+//        
+//    }
+//    
+//    
+//    func animateDot2(status: String){
+//        
+//        
+//        self.dot2WidthConstraint.constant = 10
+//        
+//        
+//        // Code to start animation
+//        self.setNeedsLayout()
+//        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.7, options: [UIViewAnimationOptions.allowUserInteraction], animations: {
+//            self.layoutIfNeeded()
+//            
+//            self.dot2.layer.cornerRadius = 5
+//            
+//            if status == "2" {
+//                self.dot2.backgroundColor = self.UIColorFromRGB(0xF7E160) // yellow
+//            } else if status == "3" {
+//                self.dot2.backgroundColor = self.UIColorFromRGB(0xFA9A2D) // yellow
+//            }
+//            
+//            
+//            
+//        }) { (finished) in
+//            if finished {
+//                // Code to execute after animation...
+//                
+//                
+//                if status != "2" {
+//                    self.animateDot3(status: status)
+//                }
+//                
+//                
+//                self.dot2WidthConstraint.constant = 6
+//                
+//                
+//                // Code to start animation ---------------------------
+//                self.setNeedsLayout()
+//                UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.7, options: [UIViewAnimationOptions.allowUserInteraction], animations: {
+//                    self.layoutIfNeeded()
+//                    self.dot2.layer.cornerRadius = 3
+//                }) { (finished) in
+//                    if finished {
+//                        // Code to execute after animation...
+//                    }
+//                } // -------------------------------------------------
+//                
+//            }
+//        }
+//        
+//    }
+//    
+//    
+//    func animateDot3(status: String){
+//        
+//        
+//        self.dot3WidthConstraint.constant = 10
+//        
+//        
+//        // Code to start animation
+//        self.setNeedsLayout()
+//        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.7, options: [UIViewAnimationOptions.allowUserInteraction], animations: {
+//            self.layoutIfNeeded()
+//            self.dot3.layer.cornerRadius = 5
+//            if status == "3" {
+//                self.dot3.backgroundColor = self.UIColorFromRGB(0xFA9A2D) // orange
+//            }
+//
+//        }) { (finished) in
+//            if finished {
+//                // Code to execute after animation...
+//
+//                self.dot3WidthConstraint.constant = 6
+//                // Code to start animation ---------------------------
+//                self.setNeedsLayout()
+//                UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.7, options: [UIViewAnimationOptions.allowUserInteraction], animations: {
+//                    self.layoutIfNeeded()
+//                    
+//                    self.dot3.layer.cornerRadius = 3
+// 
+//                }) { (finished) in
+//                    if finished {
+//                        // Code to execute after animation...
+//                    }
+//                } // -------------------------------------------------
+//  
+//            }
+//        }
+//        
+//    }
     
     
-    func animateDot2(status: String){
-        
-        
-        self.dot2WidthConstraint.constant = 10
-        
-        
-        // Code to start animation
-        self.setNeedsLayout()
-        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.7, options: [UIViewAnimationOptions.allowUserInteraction], animations: {
-            self.layoutIfNeeded()
-            
-            self.dot2.layer.cornerRadius = 5
-            
-            if status == "2" {
-                self.dot2.backgroundColor = self.UIColorFromRGB(0xF7E160) // yellow
-            } else if status == "3" {
-                self.dot2.backgroundColor = self.UIColorFromRGB(0xFA9A2D) // yellow
-            }
-            
-            
-            
-        }) { (finished) in
-            if finished {
-                // Code to execute after animation...
-                
-                
-                if status != "2" {
-                    self.animateDot3(status: status)
-                }
-                
-                
-                self.dot2WidthConstraint.constant = 6
-                
-                
-                // Code to start animation ---------------------------
-                self.setNeedsLayout()
-                UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.7, options: [UIViewAnimationOptions.allowUserInteraction], animations: {
-                    self.layoutIfNeeded()
-                    self.dot2.layer.cornerRadius = 3
-                }) { (finished) in
-                    if finished {
-                        // Code to execute after animation...
-                    }
-                } // -------------------------------------------------
-                
-            }
-        }
-        
-    }
     
-    
-    func animateDot3(status: String){
+    func AnimateCheckMark(from: String) {
+        
+        print("Animating check mark now!! ----> cell name ----> \(self._model?.title!) ----> called from \(from)")
         
         
-        self.dot3WidthConstraint.constant = 10
-        
-        
-        // Code to start animation
-        self.setNeedsLayout()
-        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.7, options: [UIViewAnimationOptions.allowUserInteraction], animations: {
-            self.layoutIfNeeded()
-            self.dot3.layer.cornerRadius = 5
-            if status == "3" {
-                self.dot3.backgroundColor = self.UIColorFromRGB(0xFA9A2D) // orange
-            }
-
-        }) { (finished) in
-            if finished {
-                // Code to execute after animation...
-
-                self.dot3WidthConstraint.constant = 6
-                // Code to start animation ---------------------------
-                self.setNeedsLayout()
-                UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.7, options: [UIViewAnimationOptions.allowUserInteraction], animations: {
-                    self.layoutIfNeeded()
-                    
-                    self.dot3.layer.cornerRadius = 3
- 
-                }) { (finished) in
-                    if finished {
-                        // Code to execute after animation...
-                    }
-                } // -------------------------------------------------
-  
-            }
-        }
-        
-    }
-    
-    
-    
-    func AnimateCheckMark() {
-        
-        print("Animating check mark now!! ----> cell name ----> \(self._model?.title)")
         
         
         // This will only trigger if the method is called after adding a new photo
@@ -255,6 +277,14 @@ class AlgosTableViewCell: UITableViewCell, AnimateCheckMarkDelegate {
             self._model?.isCompleted = true
             self._model?.completedOn = NSDate()
         }
+        
+        
+        if from == "vc" {
+            self._model?.numPhotos += 1
+            self.numPhotosLabel.isHidden = false
+            self.numPhotosLabel.text = "\((self._model?.numPhotos)!)"
+        }
+        
         
         
         self.addBtnImage.image = UIImage(named: "check")

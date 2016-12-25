@@ -9,7 +9,7 @@
 import UIKit
 protocol AnimateCheckMarkDelegate: class {
     
-    func AnimateCheckMark()
+    func AnimateCheckMark(from: String)
     
 }
 

@@ -10,11 +10,26 @@ import UIKit
 
 class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PhotoMenuDelegate {
     
+    
+    // MARK: Variables ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var algoData:Algo?
+    var algoIndex:Int?
     var photosArray:[Photo]?
     
+    var photoToDelete:Photo?
+    var deleteIndex:Int?
+    
     var imagesArray:[UIImage] = []
+    
+    
+    // Delegates -----------------------
+    var updateTDVCForDeleteDelegate: UpdateTDVCForPhotoDeleteDelegate?
+    
+    
+    
+    
+    
     
     // MARK: Outlets ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     
@@ -127,6 +142,7 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         // Set Model
         cell.model = (self.photosArray?[indexPath.row])!
+        cell.idx = indexPath.row
         
         cell.myAwesomeImageView.image = self.imagesArray[indexPath.row]
         
@@ -138,15 +154,6 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     
     
 
-    func HandlePhotoMenuButtonTapped(photoModel: Photo) {
-        
-        print("dots menu button tapped!")
-        
-        self.animateBG()
-        self.animateMenu()
-        
-        
-    }
     
     func handleMenuBGViewTapped(){
         
@@ -214,12 +221,51 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     
+    func HandlePhotoMenuButtonTapped(photoModel: Photo, index: Int) {
+        
+        print("dots menu button tapped!")
+        self.photoToDelete = photoModel
+        self.deleteIndex = index
+        
+        self.animateBG()
+        self.animateMenu()
+        
+        
+    }
     
     
     
     func handleDeleteButtonViewTapped(){
         
         print("gonna delete some stuff up in hurr! ..")
+        
+        // Dismiss menu BG --------------------------------------------
+        self.animateBG()
+        self.animateMenu()
+        
+        // Delete the photo from coreData -----------------------------
+        context.delete(self.photoToDelete!)
+
+        if self.context.hasChanges {
+            do {
+                try self.context.save()
+                print("Successfully deleted photo object from CoreData")
+                
+            } catch {
+                print("\(error)")
+            }
+        }
+        
+        // Delete the photo from local cache -----------------------------
+        self.photosArray?.remove(at: self.deleteIndex!)
+        self.photosTableView.reloadData()
+        
+        
+        // Update data in TrackDetailsViewController
+        self.updateTDVCForDeleteDelegate?.HandlePhotoDeleted(algo: self.algoData!, index: self.algoIndex!)
+        
+        
+        
         
     }
     

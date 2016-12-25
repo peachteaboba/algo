@@ -13,13 +13,16 @@ import UIKit
 class PhotosTableViewCell: UITableViewCell{
 
     
+    // Variables -------------------------------
+    var idx:Int?
+    
     @IBOutlet weak var timestampLabel: UILabel!
     @IBOutlet weak var myAwesomeImageView: UIImageView!
     @IBOutlet weak var dotsView: UIView!
     
     
     
-    // Delegates
+    // Delegates ---------------------------
     var photoMenuDelegate: PhotoMenuDelegate?
     
     
@@ -52,7 +55,7 @@ class PhotosTableViewCell: UITableViewCell{
     
     // Protocol Method
     func handledotsViewTapped(){
-        self.photoMenuDelegate?.HandlePhotoMenuButtonTapped(photoModel: self._model!)
+        self.photoMenuDelegate?.HandlePhotoMenuButtonTapped(photoModel: self._model!, index: self.idx!)
     }
     
     

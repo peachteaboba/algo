@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UpdateTDVCForPhotoDeleteDelegate {
     
     // MARK: Variables ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -19,6 +19,7 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     var algoTargeted:Algo?
+    var cellTargeted: AlgosTableViewCell?
     
     
     
@@ -155,7 +156,9 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
             
             
             let cell = self.algosTableView.cellForRow(at: indexPath) as! AlgosTableViewCell
-           
+            self.cellTargeted = cell
+            
+            
             self.algoTargeted = cell.model
             
             // if isCompleted is false then open the camera to take photo
@@ -175,6 +178,8 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
 
                 // Setting some data
                 vc.algoData = self.algoTargeted
+                vc.algoIndex = indexPath.row
+                vc.updateTDVCForDeleteDelegate = self
                 
                 
                 // Fetch all images for this algo from core data
@@ -283,7 +288,7 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
         print("gotcha!")
         
         // Animate the checkmark
-        self.checkMarkDelegate?.AnimateCheckMark()
+        self.checkMarkDelegate?.AnimateCheckMark(from: "vc")
 
         // Save the photo object to CoreData and adjust cache accordingly
         self.saveImage()
@@ -318,7 +323,7 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
             
             // Update algos and tracks CoreDate stuffs accordingly ++++++++++++++++
             self.trackData?.completedM += 1
-            self.algoTargeted?.numPhotos += 1
+//            self.algoTargeted?.numPhotos += 1
             
             // Save CodeData context ++++++++++++++++++++++++++++++++++++++++++++++
             if self.context.hasChanges {
@@ -337,7 +342,42 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     
-    
+    // Protocol methods ---------------------------------------------------------
+    func HandlePhotoDeleted(algo:Algo, index:Int) {
+        
+        print("In the Track Details VC, updating data for photo delete")
+        
+        // Update info
+        self.algosArray?[index].numPhotos -= 1
+  
+        
+        if self.algosArray?[index].numPhotos == 0 {
+            self.algosArray?[index].isCompleted = false
+            self.cellTargeted?.addBtnImage.image = UIImage(named: "addBtn")
+            // Update Track Data
+            self.trackData?.completedM -= 1
+        }
+        
+        
+        
+        
+        // Save CodeData context ++++++++++++++++++++++++++++++++++++++++++++++
+        if self.context.hasChanges {
+            do {
+                try self.context.save()
+                print("Success")
+            } catch {
+                print("\(error)")
+            }
+        }
+
+        // Update UI
+        self.cellTargeted?.model = (self.algosArray?[index])!
+        self.algosTableView.reloadData()
+        
+        
+        
+    }
     
     
     
