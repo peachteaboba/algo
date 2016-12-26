@@ -283,7 +283,7 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         // Set Model
         cell.model = (self.photosArray?[indexPath.row])!
-        cell.idx = indexPath.row
+       
         
         cell.myAwesomeImageView.image = self.imagesArray[indexPath.row]
         
@@ -398,7 +398,6 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         }
         
         // Delete the photo from local cache -----------------------------
-        print(self.deleteIndex)
         self.photosArray?.remove(at: self.deleteIndex!)
       
         self.photosTableView.reloadData()

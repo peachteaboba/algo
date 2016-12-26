@@ -14,7 +14,9 @@ class PhotosTableViewCell: UITableViewCell{
 
     
     // Variables -------------------------------
-    var idx:Int?
+    var timeAgo:String?
+    var timeDate:String?
+    
     
     @IBOutlet weak var timestampLabel: UILabel!
     @IBOutlet weak var myAwesomeImageView: UIImageView!
@@ -45,10 +47,11 @@ class PhotosTableViewCell: UITableViewCell{
     func setControls(){
         
         
-        
+        self.timeDate = getTimeDate(date: (self._model?.timestamp)!)
+        self.timeAgo = self.timeAgoSinceDate(date: (self._model?.timestamp)!, numericDates: false)
         
         // Set time label
-        self.timestampLabel.text = self.timeAgoSinceDate(date: (self._model?.timestamp)!, numericDates: false)
+        self.timestampLabel.text = self.timeAgo
         self.timestampLabel.textColor = self.UIColorFromRGB(0xccccd5) // light grey
     }
     
@@ -60,13 +63,13 @@ class PhotosTableViewCell: UITableViewCell{
     
     
     
+    func getTimeDate(date:NSDate) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE, MMM dd yyyy"
+        return dateFormatter.string(from: date as Date)
+    }
     
-    
-    
-    
-    
-    
-    
+
     
     
     func timeAgoSinceDate(date:NSDate, numericDates:Bool) -> String {
@@ -145,6 +148,13 @@ class PhotosTableViewCell: UITableViewCell{
         self.dotsView.addGestureRecognizer(dotsViewTap)
         
         
+        // Assign event handler to timestampLabel
+        let timestampLabelTap = UITapGestureRecognizer(target: self, action: #selector(self.handleTimestampLabelTapped))
+        self.timestampLabel.isUserInteractionEnabled = true
+        self.timestampLabel.addGestureRecognizer(timestampLabelTap)
+        
+        
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -164,5 +174,19 @@ class PhotosTableViewCell: UITableViewCell{
         )
     }
 
+    
+    
+    // Switch between two date formats
+    func handleTimestampLabelTapped(){
+        if self.timestampLabel.text == self.timeAgo {
+            self.timestampLabel.text = self.timeDate
+        } else {
+            self.timestampLabel.text = self.timeAgo
+        }
+    }
+    
+    
+    
+    
 
 }
