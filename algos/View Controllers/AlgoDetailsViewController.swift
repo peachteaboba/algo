@@ -198,6 +198,12 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: UI Lifecycle Events ::::::::::::::::::::::::::::::::::::::::::::::
     override func viewWillAppear(_ animated: Bool) {
+        self.photosTableView.reloadData()
+        
+        // Table view margins
+        self.photosTableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 200.0, 0.0)
+        
+        
     }
     
     override func viewDidLoad() {
@@ -228,7 +234,7 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         
         
-        
+
         
         
     }
@@ -272,26 +278,70 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: Collection View Methods :::::::::::::::::::::::::::::::::::::::::::::::::::
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (self.photosArray?.count)!
+        return (self.photosArray?.count)! + 1
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.row == 0 {
+            return UITableViewAutomaticDimension
+        } else {
+            return self.view.frame.width + 50
+        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell", for: indexPath) as! PhotosTableViewCell
-        
-        // Set Model
-        cell.model = (self.photosArray?[indexPath.row])!
-       
-        
-        cell.myAwesomeImageView.image = self.imagesArray[indexPath.row]
-        
-        cell.photoMenuDelegate = self
-        
-        return cell
-        
+        if indexPath.row == 0 {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AlgoHeaderCell", for: indexPath) as! AlgoHeaderTableViewCell
+            
+            cell.model = self.algoData!
+            
+            
+            // Set dynamic cell height
+            self.photosTableView.estimatedRowHeight = self.view.frame.width
+            self.photosTableView.rowHeight = UITableViewAutomaticDimension
+            
+            return cell
+            
+            
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell", for: indexPath) as! PhotosTableViewCell
+            
+            let cellIndex = indexPath.row - 1
+            
+            
+            // Set Model
+            cell.model = (self.photosArray?[cellIndex])!
+            cell.myAwesomeImageView.image = self.imagesArray[cellIndex]
+            cell.myAwesomeImageView.layer.masksToBounds = true
+            cell.myAwesomeImageView.layer.cornerRadius = 4
+            cell.photoMenuDelegate = self
+            
+            // Set dynamic cell height
+//            self.photosTableView.estimatedRowHeight = self.view.frame.width
+//            self.photosTableView.rowHeight = UITableViewAutomaticDimension
+            
+            
+            return cell
+        }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 
@@ -366,10 +416,11 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         print("dots menu button tapped!")
         self.photoToDelete = photoModel
-        self.deleteIndex = (self.photosTableView.indexPath(for: cell)?.row)! as Int
+        self.deleteIndex = ((self.photosTableView.indexPath(for: cell)?.row)! - 1) as Int
         self.animateBG()
         self.animateMenu()
         
+        print("delete index ----> \(self.deleteIndex)")
         
     }
     
@@ -399,12 +450,13 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         // Delete the photo from local cache -----------------------------
         self.photosArray?.remove(at: self.deleteIndex!)
-      
+        self.imagesArray.remove(at: self.deleteIndex!)
+        print("removing  ----> \(self.deleteIndex)")
         self.photosTableView.reloadData()
         
         
         // Update data in TrackDetailsViewController
-        self.updateTDVCForDeleteDelegate?.HandlePhotoDeleted(algo: self.algoData!, index: self.algoIndex!)
+        self.updateTDVCForDeleteDelegate?.HandlePhotoDeleted(algo: self.algoData!, index: self.deleteIndex!)
         
         if self.algoData?.numPhotos == 0 {
             // Return to Track Details VC

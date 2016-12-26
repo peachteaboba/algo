@@ -27,6 +27,7 @@
 		8A06D1BA1E0F6D5900CF5754 /* UpdateTDVCForPhotoDeleteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06D1B91E0F6D5900CF5754 /* UpdateTDVCForPhotoDeleteDelegate.swift */; };
 		8A06D1DF1E10B2AF00CF5754 /* UpdateTDVCForPhotoAddDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06D1DE1E10B2AF00CF5754 /* UpdateTDVCForPhotoAddDelegate.swift */; };
 		8A06D1E21E10DA3700CF5754 /* Aerolite-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A06D1E11E10DA3700CF5754 /* Aerolite-Bold.otf */; };
+		8A06D1E41E11B79500CF5754 /* AlgoHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06D1E31E11B79500CF5754 /* AlgoHeaderTableViewCell.swift */; };
 		8A3597031E09F23B00A0C4AE /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3597021E09F23B00A0C4AE /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		8A06D1B91E0F6D5900CF5754 /* UpdateTDVCForPhotoDeleteDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTDVCForPhotoDeleteDelegate.swift; sourceTree = "<group>"; };
 		8A06D1DE1E10B2AF00CF5754 /* UpdateTDVCForPhotoAddDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTDVCForPhotoAddDelegate.swift; sourceTree = "<group>"; };
 		8A06D1E11E10DA3700CF5754 /* Aerolite-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aerolite-Bold.otf"; sourceTree = "<group>"; };
+		8A06D1E31E11B79500CF5754 /* AlgoHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlgoHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		8A3597011E09F23B00A0C4AE /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../Desktop - Andy’s MacBook/algos/algos/SWRevealFiles/SWRevealViewController.h"; sourceTree = "<group>"; };
 		8A3597021E09F23B00A0C4AE /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../Desktop - Andy’s MacBook/algos/algos/SWRevealFiles/SWRevealViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +131,7 @@
 			children = (
 				8A06D1A61E0F2DBF00CF5754 /* TracksTableViewCell.swift */,
 				8A06D1A41E0F2DBF00CF5754 /* AlgosTableViewCell.swift */,
+				8A06D1E31E11B79500CF5754 /* AlgoHeaderTableViewCell.swift */,
 				8A06D1A51E0F2DBF00CF5754 /* PhotosTableViewCell.swift */,
 			);
 			path = "Custom Cells";
@@ -238,6 +241,7 @@
 				8A06D1BA1E0F6D5900CF5754 /* UpdateTDVCForPhotoDeleteDelegate.swift in Sources */,
 				8A06D1B41E0F2DE400CF5754 /* LeaderboardViewController.swift in Sources */,
 				8A06D1A91E0F2DBF00CF5754 /* TracksTableViewCell.swift in Sources */,
+				8A06D1E41E11B79500CF5754 /* AlgoHeaderTableViewCell.swift in Sources */,
 				8A06D1B81E0F2DE400CF5754 /* TracksViewController.swift in Sources */,
 				8A05651B1E087C9100E263FA /* algos.xcdatamodeld in Sources */,
 				8A0565131E087C9100E263FA /* AppDelegate.swift in Sources */,

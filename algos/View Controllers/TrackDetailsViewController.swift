@@ -188,7 +188,7 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
                 let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Photo")
                 
                 
-                print((self.algoTargeted?.place)!)
+                print("algo place ---> \((self.algoTargeted?.place)!)")
                 
                 
                 
@@ -352,6 +352,9 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
         // Update info
 //        self.algosArray?[index].numPhotos -= 1
   
+        print(index)
+        
+        
         
         if self.algosArray?[index].numPhotos == 0 {
             self.algosArray?[index].isCompleted = false
