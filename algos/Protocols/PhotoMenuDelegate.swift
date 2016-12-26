@@ -9,6 +9,6 @@
 import UIKit
 protocol PhotoMenuDelegate: class {
     
-    func HandlePhotoMenuButtonTapped(photoModel: Photo, index: Int)
+    func HandlePhotoMenuButtonTapped(photoModel: Photo, cell: PhotosTableViewCell)
     
 }

@@ -55,7 +55,7 @@ class PhotosTableViewCell: UITableViewCell{
     
     // Protocol Method
     func handledotsViewTapped(){
-        self.photoMenuDelegate?.HandlePhotoMenuButtonTapped(photoModel: self._model!, index: self.idx!)
+        self.photoMenuDelegate?.HandlePhotoMenuButtonTapped(photoModel: self._model!, cell: self)
     }
     
     

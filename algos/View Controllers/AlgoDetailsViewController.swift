@@ -362,12 +362,11 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     
-    func HandlePhotoMenuButtonTapped(photoModel: Photo, index: Int) {
+    func HandlePhotoMenuButtonTapped(photoModel: Photo, cell: PhotosTableViewCell) {
         
         print("dots menu button tapped!")
         self.photoToDelete = photoModel
-        self.deleteIndex = index
-        
+        self.deleteIndex = (self.photosTableView.indexPath(for: cell)?.row)! as Int
         self.animateBG()
         self.animateMenu()
         
@@ -399,7 +398,9 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         }
         
         // Delete the photo from local cache -----------------------------
+        print(self.deleteIndex)
         self.photosArray?.remove(at: self.deleteIndex!)
+      
         self.photosTableView.reloadData()
         
         
