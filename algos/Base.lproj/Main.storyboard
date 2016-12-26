@@ -777,7 +777,18 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G65-MC-eXI">
                                         <rect key="frame" x="324" y="20" width="51" height="50"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addBtnWhite" translatesAutoresizingMaskIntoConstraints="NO" id="MPL-XV-VRh">
+                                                <rect key="frame" x="12.5" y="12" width="26" height="26"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="26" id="7yq-PC-X4s"/>
+                                                    <constraint firstAttribute="width" secondItem="MPL-XV-VRh" secondAttribute="height" multiplier="1:1" id="Uuv-t0-0yP"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
                                         <constraints>
+                                            <constraint firstItem="MPL-XV-VRh" firstAttribute="centerX" secondItem="G65-MC-eXI" secondAttribute="centerX" id="QLA-Fe-fsG"/>
+                                            <constraint firstItem="MPL-XV-VRh" firstAttribute="centerY" secondItem="G65-MC-eXI" secondAttribute="centerY" id="aIq-Gh-dX2"/>
                                             <constraint firstAttribute="width" secondItem="G65-MC-eXI" secondAttribute="height" multiplier="1:1" constant="1" id="ark-PH-CFK"/>
                                         </constraints>
                                     </view>
@@ -940,6 +951,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addButtonView" destination="G65-MC-eXI" id="uPY-ol-vwA"/>
                         <outlet property="backButtonView" destination="0Cd-wj-OPr" id="ZMp-I7-hfg"/>
                         <outlet property="deleteButtonView" destination="VAp-di-L2j" id="PTL-jD-fWf"/>
                         <outlet property="menuBGView" destination="fh1-fD-CpV" id="aSS-9Q-vrC"/>
@@ -957,6 +969,7 @@
     </scenes>
     <resources>
         <image name="addBtn" width="250" height="250"/>
+        <image name="addBtnWhite" width="256" height="256"/>
         <image name="arrowDown" width="512" height="512"/>
         <image name="arrowLeft" width="250" height="250"/>
         <image name="arrowRight" width="250" height="250"/>

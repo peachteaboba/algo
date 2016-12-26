@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import CoreData
 
-class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PhotoMenuDelegate {
+class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PhotoMenuDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     // MARK: Variables ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var algoData:Algo?
     var algoIndex:Int?
+    var trackData:Track?
+    
     var photosArray:[Photo]?
     
     var photoToDelete:Photo?
@@ -23,9 +26,13 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     var imagesArray:[UIImage] = []
     
     
+    var picker = UIImagePickerController()
+    var photo:UIImage?
+    
+    
     // Delegates -----------------------
     var updateTDVCForDeleteDelegate: UpdateTDVCForPhotoDeleteDelegate?
-    
+    var updateTDVCForAddDelegate: UpdateTDVCForPhotoAddDelegate?
     
     
     
@@ -35,6 +42,7 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     
    
     @IBOutlet weak var backButtonView: UIView!
+    @IBOutlet weak var addButtonView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var photosTableView: UITableView!
@@ -59,23 +67,153 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-//        let appDel = UIApplication.shared.delegate as! AppDelegate
-      
+    func handleAddButtonTapped(){
+        
+        self.openCamera()
         
     }
     
     
+    // MARK: Camera Methods :::::::::::::::::::::::::::::::::::::::::::::::::::
+    func openCamera(){
+        print("opening camera")
+        
+        // Camera stuffs!
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.allowsEditing = true
+            picker.sourceType = UIImagePickerControllerSourceType.camera
+            picker.cameraCaptureMode = .photo
+            picker.modalPresentationStyle = .fullScreen
+            present(picker,animated: true,completion: nil)
+        } else {
+            print("No Camera!")
+            self.noCamera()
+        }
+        
+    }
+    
+    // In case you're using the simulator..
+    func noCamera(){
+        
+        let alertVC = UIAlertController(
+            title: "No Camera",
+            message: "Sorry, this device has no camera",
+            preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(
+            title: "OK",
+            style:.default,
+            handler: nil)
+        
+        alertVC.addAction(okAction)
+        present(alertVC, animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    // MARK: - Image picker delegates -------------------------------------------------------
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("cancel camera")
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        dismiss(animated: true, completion: nil)
+        
+        let chosenImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        
+        self.imagesArray.insert(chosenImage, at: 0)
+        
+        self.photo = chosenImage
+
+        // Save the photo object to CoreData and adjust cache accordingly
+        self.saveImage()
+        
+    }
+
+    
+    func saveImage(){
+        if self.photo != nil {
+            
+            // Create Photo object :::::::::::::::::::::::::::::::
+            let photo = NSEntityDescription.insertNewObject(forEntityName: "Photo",  into: context) as! Photo
+            
+            if let imageToSave = self.photo {
+                let data = UIImagePNGRepresentation(imageToSave)
+                photo.image = data as NSData?
+            }
+            
+            photo.comment = ""
+            photo.timestamp = NSDate()
+            
+            photo.track = (self.algoData?.track)!
+            photo.algoPlace = (self.algoData?.place)!
+            // ::::::::::::::::::::::::::::::::::::::::::::::::::::
+         
+
+            // Update algos and tracks CoreDate stuffs accordingly ++++++++++++++++
+            self.algoData?.numPhotos += 1
+
+            self.photosArray?.insert(photo, at: 0)
+            self.photosTableView.reloadData()
+            self.updateTDVCForAddDelegate?.HandlePhotoAdded(algo: self.algoData!, index: self.algoIndex!)
+            
+            
+            // Save CodeData context ++++++++++++++++++++++++++++++++++++++++++++++
+            if self.context.hasChanges {
+                do {
+                    try self.context.save()
+                    print("Success")
+                
+                } catch {
+                    print("\(error)")
+                }
+            }
+            
+        } else {
+            print("Photo is nil...")
+        }
+    }
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     // MARK: UI Lifecycle Events ::::::::::::::::::::::::::::::::::::::::::::::
+    override func viewWillAppear(_ animated: Bool) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
  
+        self.picker.delegate = self
+        
         // Assign event handler to backButtonView
         let backButtonTap = UITapGestureRecognizer(target: self, action: #selector(self.handleBackButtonTapped))
         self.backButtonView.isUserInteractionEnabled = true
         self.backButtonView.addGestureRecognizer(backButtonTap)
         
+        // Assign event handler to addButtonView
+        let addButtonTap = UITapGestureRecognizer(target: self, action: #selector(self.handleAddButtonTapped))
+        self.addButtonView.isUserInteractionEnabled = true
+        self.addButtonView.addGestureRecognizer(addButtonTap)
 
         
         // Initial Styling -----------
@@ -87,6 +225,9 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         // Menu View Initial Styles
         self.menuViewInitialStyles()
+        
+        
+        
         
         
         

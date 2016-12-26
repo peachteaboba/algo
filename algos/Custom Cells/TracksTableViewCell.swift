@@ -98,7 +98,7 @@ class TracksTableViewCell: UITableViewCell {
         let percentage = CGFloat(completed!) / CGFloat(total!)
 
         
-        if percentage <= 0.3 {
+        if percentage <= 0.4 {
             self.progressBar.backgroundColor = self.UIColorFromRGB(0xFA9A2D) // orange
         } else if percentage <= 0.6 {
             self.progressBar.backgroundColor = self.UIColorFromRGB(0xF7E160) // yellow

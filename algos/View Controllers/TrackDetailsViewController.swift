@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UpdateTDVCForPhotoDeleteDelegate {
+class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UpdateTDVCForPhotoDeleteDelegate, UpdateTDVCForPhotoAddDelegate {
     
     // MARK: Variables ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -179,7 +179,9 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
                 // Setting some data
                 vc.algoData = self.algoTargeted
                 vc.algoIndex = indexPath.row
+                vc.trackData = self.trackData
                 vc.updateTDVCForDeleteDelegate = self
+                vc.updateTDVCForAddDelegate = self
                 
                 
                 // Fetch all images for this algo from core data
@@ -199,7 +201,7 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
                     let results = try self.context.fetch(request)
                     let tempArr = results as! [Photo]
                     
-                    vc.photosArray = tempArr
+                    vc.photosArray = tempArr.reversed()
                     
                     print("Got all the photos from CoreData")
                     
@@ -212,7 +214,7 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
                         vc.imagesArray.append(image)
                     }
                     
-                    
+                    vc.imagesArray = vc.imagesArray.reversed()
                     
                 } catch {
                     print("\(error)")
@@ -381,7 +383,13 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     
-    
+    func HandlePhotoAdded(algo: Algo, index: Int) {
+        
+        print("In the Track Details VC, updating data for photo add")
+        self.algosTableView.reloadData()
+        
+        
+    }
     
     
     
