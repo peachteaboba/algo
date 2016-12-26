@@ -10,6 +10,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Aerolite-Bold.otf">
+            <string>AeroliteBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Reveal View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -62,10 +67,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A L G O" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qfa-qL-aId">
-                                                    <rect key="frame" x="15" y="8" width="352" height="52"/>
-                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                                    <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a l g o" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qfa-qL-aId">
+                                                    <rect key="frame" x="18" y="8" width="349" height="52"/>
+                                                    <fontDescription key="fontDescription" name="AeroliteBold" family="Aerolite Bold" pointSize="25"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.2267765410958904" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -73,7 +78,7 @@
                                                 <constraint firstItem="Qfa-qL-aId" firstAttribute="top" secondItem="dKh-fG-xIh" secondAttribute="top" constant="8" id="XQd-kA-36Q"/>
                                                 <constraint firstAttribute="bottom" secondItem="Qfa-qL-aId" secondAttribute="bottom" id="i2x-p2-1dZ"/>
                                                 <constraint firstAttribute="trailing" secondItem="Qfa-qL-aId" secondAttribute="trailing" constant="8" id="oMR-er-24T"/>
-                                                <constraint firstItem="Qfa-qL-aId" firstAttribute="leading" secondItem="dKh-fG-xIh" secondAttribute="leading" constant="15" id="ti4-g8-mBu"/>
+                                                <constraint firstItem="Qfa-qL-aId" firstAttribute="leading" secondItem="dKh-fG-xIh" secondAttribute="leading" constant="18" id="ti4-g8-mBu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.12826616860000001" green="0.1295361307" blue="0.1295361307" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

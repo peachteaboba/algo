@@ -26,6 +26,7 @@
 		8A06D1B81E0F2DE400CF5754 /* TracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06D1B11E0F2DE400CF5754 /* TracksViewController.swift */; };
 		8A06D1BA1E0F6D5900CF5754 /* UpdateTDVCForPhotoDeleteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06D1B91E0F6D5900CF5754 /* UpdateTDVCForPhotoDeleteDelegate.swift */; };
 		8A06D1DF1E10B2AF00CF5754 /* UpdateTDVCForPhotoAddDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06D1DE1E10B2AF00CF5754 /* UpdateTDVCForPhotoAddDelegate.swift */; };
+		8A06D1E21E10DA3700CF5754 /* Aerolite-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A06D1E11E10DA3700CF5754 /* Aerolite-Bold.otf */; };
 		8A3597031E09F23B00A0C4AE /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3597021E09F23B00A0C4AE /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		8A06D1B11E0F2DE400CF5754 /* TracksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksViewController.swift; sourceTree = "<group>"; };
 		8A06D1B91E0F6D5900CF5754 /* UpdateTDVCForPhotoDeleteDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTDVCForPhotoDeleteDelegate.swift; sourceTree = "<group>"; };
 		8A06D1DE1E10B2AF00CF5754 /* UpdateTDVCForPhotoAddDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTDVCForPhotoAddDelegate.swift; sourceTree = "<group>"; };
+		8A06D1E11E10DA3700CF5754 /* Aerolite-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aerolite-Bold.otf"; sourceTree = "<group>"; };
 		8A3597011E09F23B00A0C4AE /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../Desktop - Andy’s MacBook/algos/algos/SWRevealFiles/SWRevealViewController.h"; sourceTree = "<group>"; };
 		8A3597021E09F23B00A0C4AE /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../Desktop - Andy’s MacBook/algos/algos/SWRevealFiles/SWRevealViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +98,7 @@
 				8A0565191E087C9100E263FA /* algos.xcdatamodeld */,
 				8A06D1A31E0F2DBF00CF5754 /* Custom Cells */,
 				8A06D19E1E0F2D6200CF5754 /* Protocols */,
+				8A06D1E01E10DA3700CF5754 /* Fonts */,
 			);
 			path = algos;
 			sourceTree = "<group>";
@@ -143,6 +146,14 @@
 				8A06D1AB1E0F2DE400CF5754 /* AlgoDetailsViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		8A06D1E01E10DA3700CF5754 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8A06D1E11E10DA3700CF5754 /* Aerolite-Bold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +220,7 @@
 				8A0565201E087C9100E263FA /* LaunchScreen.storyboard in Resources */,
 				8A05651D1E087C9100E263FA /* Assets.xcassets in Resources */,
 				8A0565181E087C9100E263FA /* Main.storyboard in Resources */,
+				8A06D1E21E10DA3700CF5754 /* Aerolite-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
