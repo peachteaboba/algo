@@ -267,7 +267,7 @@ class AlgosTableViewCell: UITableViewCell, AnimateCheckMarkDelegate {
     
     func AnimateCheckMark(from: String) {
         
-        print("Animating check mark now!! ----> cell name ----> \(self._model?.title!) ----> called from \(from)")
+//        print("Animating check mark now!! ----> cell name ----> \(self._model?.title!) ----> called from \(from)")
         
         
         

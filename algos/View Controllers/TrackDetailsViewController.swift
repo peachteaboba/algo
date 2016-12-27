@@ -152,7 +152,7 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
         // Force this action into the main queue
         DispatchQueue.main.async {
         
-            print("cell tapped ----> index: \(indexPath.row) ----> isCompleted: \((self.algosArray?[indexPath.row].isCompleted)!)")
+//            print("cell tapped ----> index: \(indexPath.row) ----> isCompleted: \((self.algosArray?[indexPath.row].isCompleted)!)")
             
             
             let cell = self.algosTableView.cellForRow(at: indexPath) as! AlgosTableViewCell
@@ -188,7 +188,7 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
                 let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Photo")
                 
                 
-                print("algo place ---> \((self.algoTargeted?.place)!)")
+//                print("algo place ---> \((self.algoTargeted?.place)!)")
                 
                 
                 
@@ -203,7 +203,7 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
                     
                     vc.photosArray = tempArr.reversed()
                     
-                    print("Got all the photos from CoreData")
+//                    print("Got all the photos from CoreData")
                     
                     
                     
@@ -236,7 +236,7 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
 
     
     func openCamera(){
-        print("opening camera")
+//        print("opening camera")
         
         // Camera stuffs!
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -273,7 +273,7 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: - Image picker delegates -------------------------------------------------------
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        print("cancel camera")
+//        print("cancel camera")
         dismiss(animated: true, completion: nil)
         
         
@@ -287,7 +287,7 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
         self.photo = chosenImage
         
         
-        print("gotcha!")
+//        print("gotcha!")
         
         // Animate the checkmark
         self.checkMarkDelegate?.AnimateCheckMark(from: "vc")
@@ -331,7 +331,7 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
             if self.context.hasChanges {
                 do {
                     try self.context.save()
-                    print("Success")
+//                    print("Success")
                 } catch {
                     print("\(error)")
                 }

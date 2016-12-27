@@ -57,6 +57,7 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var deleteButtonView: UIView!
     
     
+    @IBOutlet weak var bugLabel: UILabel!
     
     
     // MARK: Handle Stuff Tapped ::::::::::::::::::::::::::::::::::::::::::::::
@@ -198,11 +199,17 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: UI Lifecycle Events ::::::::::::::::::::::::::::::::::::::::::::::
     override func viewWillAppear(_ animated: Bool) {
-        self.photosTableView.reloadData()
         
         // Table view margins
-        self.photosTableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 200.0, 0.0)
+        if self.photosArray?.count == 2 {
+            self.photosTableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 300.0, 0.0)
+        } else if self.photosArray?.count == 3 {
+            self.photosTableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 250.0, 0.0)
+        } else {
+            self.photosTableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 200.0, 0.0)
+        }
         
+        self.photosTableView.reloadData()
         
     }
     
@@ -224,9 +231,9 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         // Initial Styling -----------
         self.titleLabel.text = self.algoData?.title
+        self.bugLabel.textColor = self.UIColorFromRGB(0x6e21d0) // dark purple
         
-        
-        print("Number of photos ----------> \(self.photosArray?.count)")
+//        print("Number of photos ----------> \(self.photosArray?.count)")
 
         
         // Menu View Initial Styles
@@ -286,7 +293,8 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         if indexPath.row == 0 {
             return UITableViewAutomaticDimension
         } else {
-            return self.view.frame.width + 50
+//            return self.view.frame.width + 50
+            return UITableViewAutomaticDimension
         }
     }
     
@@ -320,8 +328,8 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             cell.photoMenuDelegate = self
             
             // Set dynamic cell height
-//            self.photosTableView.estimatedRowHeight = self.view.frame.width
-//            self.photosTableView.rowHeight = UITableViewAutomaticDimension
+            self.photosTableView.estimatedRowHeight = self.view.frame.width
+            self.photosTableView.rowHeight = UITableViewAutomaticDimension
             
             
             return cell

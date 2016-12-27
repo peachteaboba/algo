@@ -46,8 +46,8 @@ class AlgoHeaderTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-//        self.bgView.backgroundColor = self.UIColorFromRGB(0xffffff) // light grey
-        self.algoDescriptionLabel.textColor = self.UIColorFromRGB(0x6e21d0) // light grey
+
+        self.algoDescriptionLabel.textColor = self.UIColorFromRGB(0x6e21d0) // dark purple
   
     }
     
