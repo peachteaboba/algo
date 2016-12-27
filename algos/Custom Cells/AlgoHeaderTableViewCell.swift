@@ -14,6 +14,8 @@ class AlgoHeaderTableViewCell: UITableViewCell {
    
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var algoDescriptionLabel: UILabel!
+    @IBOutlet weak var completedOnView: UIView!
+    @IBOutlet weak var completedOnLabel: UILabel!
     
     
     
@@ -36,17 +38,25 @@ class AlgoHeaderTableViewCell: UITableViewCell {
         
         self.algoDescriptionLabel.text = self._model?.desc
         
+        let completedDate = self.getTimeDate(date: (self._model?.completedOn)!)
+        self.completedOnLabel.text = "\(completedDate)"
         
     }
     
-    
+    func getTimeDate(date:NSDate) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE, MMM dd yyyy"
+        return dateFormatter.string(from: date as Date)
+    }
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
-
+        
+        self.completedOnView.layer.cornerRadius = self.completedOnView.frame.height / 2
+        self.completedOnView.backgroundColor = self.UIColorFromRGB(0x6e21d0) // dark purple
         self.algoDescriptionLabel.textColor = self.UIColorFromRGB(0x6e21d0) // dark purple
   
     }

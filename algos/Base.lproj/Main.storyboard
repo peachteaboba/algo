@@ -869,11 +869,32 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GyK-HX-dAx">
+                                                            <rect key="frame" x="158.5" y="95" width="59.5" height="22"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONf-JK-hEF">
+                                                                    <rect key="frame" x="15" y="3" width="29.5" height="16"/>
+                                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                                                    <color key="textColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstItem="ONf-JK-hEF" firstAttribute="centerX" secondItem="GyK-HX-dAx" secondAttribute="centerX" id="D7h-c2-XbK"/>
+                                                                <constraint firstItem="ONf-JK-hEF" firstAttribute="leading" secondItem="GyK-HX-dAx" secondAttribute="leading" constant="15" id="O8l-nX-OQu"/>
+                                                                <constraint firstAttribute="trailing" secondItem="ONf-JK-hEF" secondAttribute="trailing" constant="15" id="U5h-dI-NXw"/>
+                                                                <constraint firstAttribute="bottom" secondItem="ONf-JK-hEF" secondAttribute="bottom" constant="3" id="UAd-L1-Bry"/>
+                                                                <constraint firstItem="ONf-JK-hEF" firstAttribute="top" secondItem="GyK-HX-dAx" secondAttribute="top" constant="3" id="kxw-4z-Cvq"/>
+                                                            </constraints>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="90p-zw-S1I" firstAttribute="top" secondItem="yCO-I3-g5N" secondAttribute="top" constant="5" id="GrX-rJ-nEb"/>
+                                                        <constraint firstItem="GyK-HX-dAx" firstAttribute="top" secondItem="90p-zw-S1I" secondAttribute="bottom" constant="10" id="H4X-nT-kZN"/>
                                                         <constraint firstAttribute="trailing" secondItem="90p-zw-S1I" secondAttribute="trailing" constant="20" id="PCZ-Zq-LH6"/>
+                                                        <constraint firstItem="GyK-HX-dAx" firstAttribute="centerX" secondItem="yCO-I3-g5N" secondAttribute="centerX" id="QiW-5h-yTG"/>
                                                         <constraint firstAttribute="bottom" secondItem="90p-zw-S1I" secondAttribute="bottom" constant="50" id="hBz-3Y-YFt"/>
                                                         <constraint firstItem="90p-zw-S1I" firstAttribute="leading" secondItem="yCO-I3-g5N" secondAttribute="leading" constant="20" id="seX-Ot-yrX"/>
                                                     </constraints>
@@ -892,6 +913,8 @@
                                         <connections>
                                             <outlet property="algoDescriptionLabel" destination="90p-zw-S1I" id="m0j-F7-zDH"/>
                                             <outlet property="bgView" destination="yCO-I3-g5N" id="ycJ-B1-697"/>
+                                            <outlet property="completedOnLabel" destination="ONf-JK-hEF" id="diR-Yv-Mlt"/>
+                                            <outlet property="completedOnView" destination="GyK-HX-dAx" id="FGb-np-wmh"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="photoCell" rowHeight="444" id="qgd-v1-40b" customClass="PhotosTableViewCell" customModule="algos" customModuleProvider="target">
@@ -1041,6 +1064,12 @@
                             <constraint firstItem="uMQ-Bm-6zc" firstAttribute="top" secondItem="V34-53-eKV" secondAttribute="bottom" id="wuK-3S-gXE"/>
                             <constraint firstItem="sen-sP-H5N" firstAttribute="top" secondItem="uqT-gy-ncX" secondAttribute="bottom" id="zmQ-yL-JlS"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="fh1-fD-CpV"/>
+                                <exclude reference="22u-63-i6a"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="addButtonView" destination="G65-MC-eXI" id="uPY-ol-vwA"/>
