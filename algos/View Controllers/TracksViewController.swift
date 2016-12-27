@@ -184,6 +184,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         algo1.difficulty = "1"
         algo1.completedOn = nil
         algo1.numPhotos = 0
+        algo1.hint = "I am one with the force, the force is with me."
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
         // Create Algo 2 object :::::::::::::::::::::::::::::::
@@ -196,6 +197,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         algo2.difficulty = "1"
         algo2.completedOn = nil
         algo2.numPhotos = 0
+        algo2.hint = "Do or do not.. there is no try"
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
         // Create Algo 3 object :::::::::::::::::::::::::::::::
@@ -208,6 +210,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         algo3.difficulty = "2"
         algo3.completedOn = nil
         algo3.numPhotos = 0
+        algo3.hint = "I find that answer vague and inconvincing.."
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
         // Create Algo 4 object :::::::::::::::::::::::::::::::
@@ -220,6 +223,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         algo4.difficulty = "2"
         algo4.completedOn = nil
         algo4.numPhotos = 0
+        algo4.hint = "Let the wookie win."
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
         // Create Algo 5 object :::::::::::::::::::::::::::::::
@@ -232,6 +236,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         algo5.difficulty = "3"
         algo5.completedOn = nil
         algo5.numPhotos = 0
+        algo5.hint = "Never tell me the odds."
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
         // Create Algo 6 object :::::::::::::::::::::::::::::::
@@ -244,6 +249,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         algo6.difficulty = "3"
         algo6.completedOn = nil
         algo6.numPhotos = 0
+        algo6.hint = "Would you like to know the probability of her using that against you? It's high."
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
         // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ TRACK 2 - Arrays I
@@ -260,6 +266,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         algo2_1.difficulty = "1"
         algo2_1.completedOn = nil
         algo2_1.numPhotos = 0
+        algo2_1.hint = "That's not how the force works.."
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
 
         // Create Algo 2 object :::::::::::::::::::::::::::::::
@@ -272,6 +279,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         algo2_2.difficulty = "2"
         algo2_2.completedOn = nil
         algo2_2.numPhotos = 0
+        algo2_2.hint = "In my experience, there is no such thing as luck."
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
         // Create Algo 3 object :::::::::::::::::::::::::::::::
@@ -284,6 +292,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         algo2_3.difficulty = "2"
         algo2_3.completedOn = nil
         algo2_3.numPhotos = 0
+        algo2_3.hint = "Who's scruffy looking??"
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
         // Create Algo 3 object :::::::::::::::::::::::::::::::
@@ -296,6 +305,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         algo2_4.difficulty = "3"
         algo2_4.completedOn = nil
         algo2_4.numPhotos = 0
+        algo2_4.hint = "It's a trap!!"
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
         
         

@@ -4,6 +4,7 @@
         <attribute name="completedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="difficulty" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hint" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isCompleted" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="numPhotos" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="place" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -27,7 +28,7 @@
         <attribute name="track" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Algo" positionX="-63" positionY="36" width="128" height="165"/>
+        <element name="Algo" positionX="-63" positionY="36" width="128" height="180"/>
         <element name="Photo" positionX="-63" positionY="54" width="128" height="120"/>
         <element name="Track" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>

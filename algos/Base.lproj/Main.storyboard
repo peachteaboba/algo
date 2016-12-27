@@ -767,15 +767,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uqT-gy-ncX">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bug" translatesAutoresizingMaskIntoConstraints="NO" id="des-Td-fDt">
-                                        <rect key="frame" x="172" y="80" width="30" height="30"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quote" translatesAutoresizingMaskIntoConstraints="NO" id="des-Td-fDt">
+                                        <rect key="frame" x="176.5" y="80" width="21" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="MdF-0w-pws"/>
+                                            <constraint firstAttribute="width" constant="21" id="MdF-0w-pws"/>
                                             <constraint firstAttribute="width" secondItem="des-Td-fDt" secondAttribute="height" multiplier="1:1" id="ZTF-zs-5yk"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You found a bug!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuo-a6-y4A">
-                                        <rect key="frame" x="136" y="118" width="102.5" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hint goes here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuo-a6-y4A">
+                                        <rect key="frame" x="25" y="109" width="325" height="17"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -784,7 +784,9 @@
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="des-Td-fDt" firstAttribute="top" secondItem="uqT-gy-ncX" secondAttribute="top" constant="80" id="9A8-Wl-jCu"/>
+                                    <constraint firstAttribute="trailing" secondItem="xuo-a6-y4A" secondAttribute="trailing" constant="25" id="EHS-Se-PlG"/>
                                     <constraint firstItem="xuo-a6-y4A" firstAttribute="top" secondItem="des-Td-fDt" secondAttribute="bottom" constant="8" id="EJ1-Gz-GqA"/>
+                                    <constraint firstItem="xuo-a6-y4A" firstAttribute="leading" secondItem="uqT-gy-ncX" secondAttribute="leading" constant="25" id="dye-5E-cWQ"/>
                                     <constraint firstAttribute="height" constant="400" id="hOk-x0-Ssj"/>
                                     <constraint firstItem="xuo-a6-y4A" firstAttribute="centerX" secondItem="uqT-gy-ncX" secondAttribute="centerX" id="uvW-gj-Moi"/>
                                     <constraint firstItem="des-Td-fDt" firstAttribute="centerX" secondItem="uqT-gy-ncX" secondAttribute="centerX" id="y8C-RO-6CR"/>
@@ -1064,12 +1066,6 @@
                             <constraint firstItem="uMQ-Bm-6zc" firstAttribute="top" secondItem="V34-53-eKV" secondAttribute="bottom" id="wuK-3S-gXE"/>
                             <constraint firstItem="sen-sP-H5N" firstAttribute="top" secondItem="uqT-gy-ncX" secondAttribute="bottom" id="zmQ-yL-JlS"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="fh1-fD-CpV"/>
-                                <exclude reference="22u-63-i6a"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="addButtonView" destination="G65-MC-eXI" id="uPY-ol-vwA"/>
@@ -1095,12 +1091,12 @@
         <image name="arrowDown" width="512" height="512"/>
         <image name="arrowLeft" width="250" height="250"/>
         <image name="arrowRight" width="250" height="250"/>
-        <image name="bug" width="256" height="256"/>
         <image name="clock" width="250" height="250"/>
         <image name="code" width="250" height="250"/>
         <image name="dots" width="250" height="250"/>
         <image name="menu" width="128" height="128"/>
         <image name="profile" width="128" height="128"/>
+        <image name="quote" width="256" height="256"/>
         <image name="star" width="128" height="128"/>
         <image name="tracks" width="128" height="128"/>
     </resources>

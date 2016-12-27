@@ -17,7 +17,7 @@ class AlgoHeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var completedOnView: UIView!
     @IBOutlet weak var completedOnLabel: UILabel!
     
-    
+    var completedDate:String?
     
     // Model -------------------------------
     private var _model:Algo?
@@ -35,11 +35,11 @@ class AlgoHeaderTableViewCell: UITableViewCell {
     
     
     func setControls(){
+        self.completedDate = self.getTimeDate(date: (self._model?.completedOn)!)
         
         self.algoDescriptionLabel.text = self._model?.desc
-        
-        let completedDate = self.getTimeDate(date: (self._model?.completedOn)!)
-        self.completedOnLabel.text = "\(completedDate)"
+
+        self.completedOnLabel.text = self.completedDate
         
     }
     
@@ -58,8 +58,24 @@ class AlgoHeaderTableViewCell: UITableViewCell {
         self.completedOnView.layer.cornerRadius = self.completedOnView.frame.height / 2
         self.completedOnView.backgroundColor = self.UIColorFromRGB(0x6e21d0) // dark purple
         self.algoDescriptionLabel.textColor = self.UIColorFromRGB(0x6e21d0) // dark purple
+        
+        
+        
+        // Assign event handler to completedOnView
+        let completedOnViewTap = UITapGestureRecognizer(target: self, action: #selector(self.handleCompletedOnViewTapped))
+        self.completedOnView.isUserInteractionEnabled = true
+        self.completedOnView.addGestureRecognizer(completedOnViewTap)
   
     }
+    
+    func handleCompletedOnViewTapped(){
+        if self.completedOnLabel.text == self.completedDate {
+            self.completedOnLabel.text = "Completion Date"
+        } else {
+            self.completedOnLabel.text = self.completedDate
+        }
+    }
+    
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

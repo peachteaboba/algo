@@ -232,6 +232,7 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         // Initial Styling -----------
         self.titleLabel.text = self.algoData?.title
         self.bugLabel.textColor = self.UIColorFromRGB(0x6e21d0) // dark purple
+        self.bugLabel.text = self.algoData?.hint
         
 //        print("Number of photos ----------> \(self.photosArray?.count)")
 
