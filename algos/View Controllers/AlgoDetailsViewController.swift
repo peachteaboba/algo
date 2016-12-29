@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PhotoMenuDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PhotoMenuDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ImageZoomDelegate {
     
     
     // MARK: Variables ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -327,6 +327,8 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             cell.myAwesomeImageView.layer.masksToBounds = true
             cell.myAwesomeImageView.layer.cornerRadius = 4
             cell.photoMenuDelegate = self
+            cell.imageZoomDelegate = self
+            
             
             // Set dynamic cell height
             self.photosTableView.estimatedRowHeight = self.view.frame.width
@@ -338,7 +340,13 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     
-    
+    // MARK: Protocol Methods ---------------------------
+    func HandleImageTapped(photoModel: Photo, cell: PhotosTableViewCell) {
+        print("image tapped")
+        
+        
+        
+    }
     
     
     

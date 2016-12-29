@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class PhotosTableViewCell: UITableViewCell{
+class PhotosTableViewCell: UITableViewCell {
 
     
     // Variables -------------------------------
@@ -26,6 +26,7 @@ class PhotosTableViewCell: UITableViewCell{
     
     // Delegates ---------------------------
     var photoMenuDelegate: PhotoMenuDelegate?
+    var imageZoomDelegate: ImageZoomDelegate?
     
     
     // Model -------------------------------
@@ -154,6 +155,13 @@ class PhotosTableViewCell: UITableViewCell{
         self.timestampLabel.addGestureRecognizer(timestampLabelTap)
         
         
+        // Assign event handler to myAwesomeImageView
+        let myAwesomeImageViewTap = UITapGestureRecognizer(target: self, action: #selector(self.handleMyAwesomeImageViewTapped))
+        self.myAwesomeImageView.isUserInteractionEnabled = true
+        self.myAwesomeImageView.addGestureRecognizer(myAwesomeImageViewTap)
+        
+        
+        
         
     }
     
@@ -186,7 +194,9 @@ class PhotosTableViewCell: UITableViewCell{
     }
     
     
-    
-    
+    // Call protocol methods
+    func handleMyAwesomeImageViewTapped(){
+        self.imageZoomDelegate?.HandleImageTapped(photoModel: self._model!, cell: self)
+    }
 
 }
