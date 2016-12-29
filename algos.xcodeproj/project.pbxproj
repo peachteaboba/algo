@@ -28,8 +28,8 @@
 		8A06D1DF1E10B2AF00CF5754 /* UpdateTDVCForPhotoAddDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06D1DE1E10B2AF00CF5754 /* UpdateTDVCForPhotoAddDelegate.swift */; };
 		8A06D1E21E10DA3700CF5754 /* Aerolite-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A06D1E11E10DA3700CF5754 /* Aerolite-Bold.otf */; };
 		8A06D1E41E11B79500CF5754 /* AlgoHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06D1E31E11B79500CF5754 /* AlgoHeaderTableViewCell.swift */; };
-		8A3597031E09F23B00A0C4AE /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3597021E09F23B00A0C4AE /* SWRevealViewController.m */; };
 		8A750B311E15AC1F00CEE671 /* ImageZoomDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A750B301E15AC1F00CEE671 /* ImageZoomDelegate.swift */; };
+		8A7BF6C61E15B60F004455D6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BF6C51E15B60F004455D6 /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,6 @@
 		8A05651C1E087C9100E263FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A05651F1E087C9100E263FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A0565211E087C9100E263FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8A05652D1E08873800E263FA /* algos-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "algos-Bridging-Header.h"; sourceTree = "<group>"; };
 		8A06D19F1E0F2D6200CF5754 /* AnimateCheckMarkDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateCheckMarkDelegate.swift; sourceTree = "<group>"; };
 		8A06D1A01E0F2D6200CF5754 /* PhotoMenuDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoMenuDelegate.swift; sourceTree = "<group>"; };
 		8A06D1A41E0F2DBF00CF5754 /* AlgosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlgosTableViewCell.swift; sourceTree = "<group>"; };
@@ -57,9 +56,10 @@
 		8A06D1DE1E10B2AF00CF5754 /* UpdateTDVCForPhotoAddDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTDVCForPhotoAddDelegate.swift; sourceTree = "<group>"; };
 		8A06D1E11E10DA3700CF5754 /* Aerolite-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aerolite-Bold.otf"; sourceTree = "<group>"; };
 		8A06D1E31E11B79500CF5754 /* AlgoHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlgoHeaderTableViewCell.swift; sourceTree = "<group>"; };
-		8A3597011E09F23B00A0C4AE /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../Desktop - Andy’s MacBook/algos/algos/SWRevealFiles/SWRevealViewController.h"; sourceTree = "<group>"; };
-		8A3597021E09F23B00A0C4AE /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../Desktop - Andy’s MacBook/algos/algos/SWRevealFiles/SWRevealViewController.m"; sourceTree = "<group>"; };
 		8A750B301E15AC1F00CEE671 /* ImageZoomDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageZoomDelegate.swift; sourceTree = "<group>"; };
+		8A7BF6C31E15B60F004455D6 /* algos-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "algos-Bridging-Header.h"; sourceTree = "<group>"; };
+		8A7BF6C41E15B60F004455D6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		8A7BF6C51E15B60F004455D6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +92,7 @@
 		8A0565111E087C9100E263FA /* algos */ = {
 			isa = PBXGroup;
 			children = (
-				8A05652C1E0886FA00E263FA /* SWRevealViewController */,
+				8A7BF6C21E15B60F004455D6 /* SWRevealViewController */,
 				8A0565121E087C9100E263FA /* AppDelegate.swift */,
 				8A0565161E087C9100E263FA /* Main.storyboard */,
 				8A06D1AA1E0F2DE400CF5754 /* View Controllers */,
@@ -105,16 +105,6 @@
 				8A06D1E01E10DA3700CF5754 /* Fonts */,
 			);
 			path = algos;
-			sourceTree = "<group>";
-		};
-		8A05652C1E0886FA00E263FA /* SWRevealViewController */ = {
-			isa = PBXGroup;
-			children = (
-				8A3597011E09F23B00A0C4AE /* SWRevealViewController.h */,
-				8A3597021E09F23B00A0C4AE /* SWRevealViewController.m */,
-				8A05652D1E08873800E263FA /* algos-Bridging-Header.h */,
-			);
-			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 		8A06D19E1E0F2D6200CF5754 /* Protocols */ = {
@@ -160,6 +150,17 @@
 				8A06D1E11E10DA3700CF5754 /* Aerolite-Bold.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8A7BF6C21E15B60F004455D6 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8A7BF6C31E15B60F004455D6 /* algos-Bridging-Header.h */,
+				8A7BF6C41E15B60F004455D6 /* SWRevealViewController.h */,
+				8A7BF6C51E15B60F004455D6 /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
+			path = SWRevealVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +245,7 @@
 				8A06D1BA1E0F6D5900CF5754 /* UpdateTDVCForPhotoDeleteDelegate.swift in Sources */,
 				8A06D1B41E0F2DE400CF5754 /* LeaderboardViewController.swift in Sources */,
 				8A06D1A91E0F2DBF00CF5754 /* TracksTableViewCell.swift in Sources */,
+				8A7BF6C61E15B60F004455D6 /* SWRevealViewController.m in Sources */,
 				8A06D1E41E11B79500CF5754 /* AlgoHeaderTableViewCell.swift in Sources */,
 				8A06D1B81E0F2DE400CF5754 /* TracksViewController.swift in Sources */,
 				8A05651B1E087C9100E263FA /* algos.xcdatamodeld in Sources */,
@@ -254,7 +256,6 @@
 				8A750B311E15AC1F00CEE671 /* ImageZoomDelegate.swift in Sources */,
 				8A06D1B51E0F2DE400CF5754 /* MenuViewController.swift in Sources */,
 				8A06D1A71E0F2DBF00CF5754 /* AlgosTableViewCell.swift in Sources */,
-				8A3597031E09F23B00A0C4AE /* SWRevealViewController.m in Sources */,
 				8A06D1DF1E10B2AF00CF5754 /* UpdateTDVCForPhotoAddDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,7 +385,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.algos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "algos/algos-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "algos/SWRevealVC/algos-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -400,7 +401,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.algos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "algos/algos-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "algos/SWRevealVC/algos-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
