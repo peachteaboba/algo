@@ -341,11 +341,12 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     // MARK: Protocol Methods ---------------------------
-    func HandleImageTapped(photoModel: Photo, cell: PhotosTableViewCell) {
-        print("image tapped")
-        
-        
-        
+    func HandleImageTapped(image: UIImage) {
+        DispatchQueue.main.async {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "zoomVC") as! PhotoZoomViewController
+            vc.imageData = image
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
     

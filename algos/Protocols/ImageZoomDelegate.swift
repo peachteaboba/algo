@@ -9,7 +9,7 @@
 import UIKit
 protocol ImageZoomDelegate: class {
     
-    func HandleImageTapped(photoModel: Photo, cell: PhotosTableViewCell)
+    func HandleImageTapped(image: UIImage)
     
     
 }

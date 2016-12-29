@@ -383,7 +383,7 @@
                                         <rect key="frame" x="0.0" y="20" width="50" height="50"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu" translatesAutoresizingMaskIntoConstraints="NO" id="oCM-Vr-OwB">
-                                                <rect key="frame" x="11.5" y="11.5" width="27" height="27"/>
+                                                <rect key="frame" x="12" y="12" width="27" height="27"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="27" id="3qz-FP-pyM"/>
                                                     <constraint firstAttribute="width" secondItem="oCM-Vr-OwB" secondAttribute="height" multiplier="1:1" id="JZS-YX-L8p"/>
@@ -452,7 +452,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BI-aK-B9S">
-                                                    <rect key="frame" x="66" y="46" width="150" height="18.5"/>
+                                                    <rect key="frame" x="66" y="46" width="150" height="19"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="0dN-5A-JLD"/>
                                                     </constraints>
@@ -481,7 +481,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdb-jB-id4">
-                                                    <rect key="frame" x="336.5" y="42" width="30.5" height="17"/>
+                                                    <rect key="frame" x="336" y="42" width="31" height="17"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -932,7 +932,7 @@
                                                     <color key="textColor" red="0.91782411730000002" green="0.92691148479999996" blue="0.92691148479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addBtn" translatesAutoresizingMaskIntoConstraints="NO" id="IJd-PI-Nrt">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addBtn" translatesAutoresizingMaskIntoConstraints="NO" id="IJd-PI-Nrt">
                                                     <rect key="frame" x="10" y="10" width="355" height="355"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="IJd-PI-Nrt" secondAttribute="height" multiplier="1:1" id="XDT-fN-d0Y"/>
@@ -1083,6 +1083,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QzJ-v3-I9z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3482.4000000000001" y="-798.35082458770626"/>
+        </scene>
+        <!--Photo Zoom View Controller-->
+        <scene sceneID="mvd-Ff-u1c">
+            <objects>
+                <viewController storyboardIdentifier="zoomVC" id="ZXL-pB-pu4" customClass="PhotoZoomViewController" customModule="algos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xtX-e1-Uu6"/>
+                        <viewControllerLayoutGuide type="bottom" id="gc9-tE-8sx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OE2-D7-AD4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u70-X8-Wgt">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VCd-dY-rCr">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="VCd-dY-rCr" firstAttribute="centerY" secondItem="u70-X8-Wgt" secondAttribute="centerY" id="4WV-ts-2Ar"/>
+                                    <constraint firstItem="VCd-dY-rCr" firstAttribute="top" secondItem="u70-X8-Wgt" secondAttribute="top" id="LPE-oF-QCT"/>
+                                    <constraint firstItem="VCd-dY-rCr" firstAttribute="centerX" secondItem="u70-X8-Wgt" secondAttribute="centerX" id="evg-Hc-Mb7"/>
+                                    <constraint firstAttribute="bottom" secondItem="VCd-dY-rCr" secondAttribute="bottom" id="g5z-Ti-xC3"/>
+                                    <constraint firstAttribute="trailing" secondItem="VCd-dY-rCr" secondAttribute="trailing" id="rdr-c3-guG"/>
+                                    <constraint firstItem="VCd-dY-rCr" firstAttribute="leading" secondItem="u70-X8-Wgt" secondAttribute="leading" id="uX9-6g-rJa"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="ZXL-pB-pu4" id="JW4-e9-yhL"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gc9-tE-8sx" firstAttribute="top" secondItem="u70-X8-Wgt" secondAttribute="bottom" id="4cx-nP-ysB"/>
+                            <constraint firstItem="u70-X8-Wgt" firstAttribute="top" secondItem="OE2-D7-AD4" secondAttribute="top" id="Bfp-6t-qFz"/>
+                            <constraint firstAttribute="trailing" secondItem="u70-X8-Wgt" secondAttribute="trailing" id="Hea-pP-SNt"/>
+                            <constraint firstItem="u70-X8-Wgt" firstAttribute="leading" secondItem="OE2-D7-AD4" secondAttribute="leading" id="NGQ-Da-kea"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="VCd-dY-rCr" id="cCq-Lr-Ah9"/>
+                        <outlet property="scrollView" destination="u70-X8-Wgt" id="wx8-c2-I9A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hk7-iQ-4Fb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4304.8000000000002" y="-798.35082458770626"/>
         </scene>
     </scenes>
     <resources>

@@ -30,6 +30,7 @@
 		8A06D1E41E11B79500CF5754 /* AlgoHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06D1E31E11B79500CF5754 /* AlgoHeaderTableViewCell.swift */; };
 		8A750B311E15AC1F00CEE671 /* ImageZoomDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A750B301E15AC1F00CEE671 /* ImageZoomDelegate.swift */; };
 		8A7BF6C61E15B60F004455D6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BF6C51E15B60F004455D6 /* SWRevealViewController.m */; };
+		8A7BF6C81E15B942004455D6 /* PhotoZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BF6C71E15B942004455D6 /* PhotoZoomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		8A7BF6C31E15B60F004455D6 /* algos-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "algos-Bridging-Header.h"; sourceTree = "<group>"; };
 		8A7BF6C41E15B60F004455D6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		8A7BF6C51E15B60F004455D6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		8A7BF6C71E15B942004455D6 /* PhotoZoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoZoomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				8A06D1B11E0F2DE400CF5754 /* TracksViewController.swift */,
 				8A06D1B01E0F2DE400CF5754 /* TrackDetailsViewController.swift */,
 				8A06D1AB1E0F2DE400CF5754 /* AlgoDetailsViewController.swift */,
+				8A7BF6C71E15B942004455D6 /* PhotoZoomViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 			files = (
 				8A06D1A21E0F2D6200CF5754 /* PhotoMenuDelegate.swift in Sources */,
 				8A06D1B61E0F2DE400CF5754 /* ProfileViewController.swift in Sources */,
+				8A7BF6C81E15B942004455D6 /* PhotoZoomViewController.swift in Sources */,
 				8A06D1B21E0F2DE400CF5754 /* AlgoDetailsViewController.swift in Sources */,
 				8A06D1A81E0F2DBF00CF5754 /* PhotosTableViewCell.swift in Sources */,
 				8A06D1BA1E0F6D5900CF5754 /* UpdateTDVCForPhotoDeleteDelegate.swift in Sources */,
