@@ -48,21 +48,33 @@ class CustomPhotoAlbum: NSObject {
     }
     
     func createAlbum() {
-        if let assetCollection = fetchAssetCollectionForAlbum() {
-            print("already have")
-            self.assetCollection = assetCollection }
-        else {
-            PHPhotoLibrary.shared().performChanges({
-                PHAssetCollectionChangeRequest.creationRequestForAssetCollection(withTitle: CustomPhotoAlbum.albumName)   // create an asset collection with the album name
-            }) { success, error in
-                if success {
-                    self.assetCollection = self.fetchAssetCollectionForAlbum()
-                } else {
-                    print("error \(error)")
-                }
+        PHPhotoLibrary.shared().performChanges({
+            PHAssetCollectionChangeRequest.creationRequestForAssetCollection(withTitle: CustomPhotoAlbum.albumName)   // create an asset collection with the album name
+        }) { success, error in
+            if success {
+                self.assetCollection = self.fetchAssetCollectionForAlbum()
+            } else {
+                print("error \(error)")
             }
         }
     }
+    
+//    func createAlbum() {
+//        if let assetCollection = fetchAssetCollectionForAlbum() {
+//            print("already have")
+//            self.assetCollection = assetCollection }
+//        else {
+//            PHPhotoLibrary.shared().performChanges({
+//                PHAssetCollectionChangeRequest.creationRequestForAssetCollection(withTitle: CustomPhotoAlbum.albumName)   // create an asset collection with the album name
+//            }) { success, error in
+//                if success {
+//                    self.assetCollection = self.fetchAssetCollectionForAlbum()
+//                } else {
+//                    print("error \(error)")
+//                }
+//            }
+//        }
+//    }
     
     func fetchAssetCollectionForAlbum() -> PHAssetCollection? {
         let fetchOptions = PHFetchOptions()

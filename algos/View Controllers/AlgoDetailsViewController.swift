@@ -85,6 +85,7 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             picker.sourceType = UIImagePickerControllerSourceType.camera
             picker.cameraCaptureMode = .photo
             picker.modalPresentationStyle = .fullScreen
+            picker.cameraFlashMode = UIImagePickerControllerCameraFlashMode.off
             present(picker,animated: true, completion: nil)
         } else {
             print("No Camera!")
@@ -479,7 +480,7 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         
         // Update data in TrackDetailsViewController
-        self.updateTDVCForDeleteDelegate?.HandlePhotoDeleted(algo: self.algoData!, index: self.deleteIndex!)
+        self.updateTDVCForDeleteDelegate?.HandlePhotoDeleted(algo: self.algoData!, index: self.algoIndex!)
         
         if self.algoData?.numPhotos == 0 {
             // Return to Track Details VC

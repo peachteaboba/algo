@@ -246,6 +246,7 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
             picker.sourceType = UIImagePickerControllerSourceType.camera
             picker.cameraCaptureMode = .photo
             picker.modalPresentationStyle = .fullScreen
+            picker.cameraFlashMode = UIImagePickerControllerCameraFlashMode.off
             present(picker,animated: true,completion: nil)
         } else {
             print("No Camera!")
@@ -356,7 +357,7 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
 //        self.algosArray?[index].numPhotos -= 1
   
         print(index)
-        
+        print(self.algosArray?[index].numPhotos as Any)
         
         
         if self.algosArray?[index].numPhotos == 0 {
