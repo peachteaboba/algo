@@ -93,6 +93,8 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
         // Initial Styling -----------
         self.applyInitialStyles()
         
+        let _ = CustomPhotoAlbum.sharedInstance
+        
     }
     
     
@@ -332,6 +334,7 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
                 do {
                     try self.context.save()
 //                    print("Success")
+                    CustomPhotoAlbum.sharedInstance.save(image: self.photo!)
                 } catch {
                     print("\(error)")
                 }

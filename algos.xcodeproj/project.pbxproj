@@ -31,6 +31,7 @@
 		8A750B311E15AC1F00CEE671 /* ImageZoomDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A750B301E15AC1F00CEE671 /* ImageZoomDelegate.swift */; };
 		8A7BF6C61E15B60F004455D6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BF6C51E15B60F004455D6 /* SWRevealViewController.m */; };
 		8A7BF6C81E15B942004455D6 /* PhotoZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BF6C71E15B942004455D6 /* PhotoZoomViewController.swift */; };
+		8A7BF6CA1E15FA8B004455D6 /* CustomPhotoAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BF6C91E15FA8B004455D6 /* CustomPhotoAlbum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		8A7BF6C41E15B60F004455D6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		8A7BF6C51E15B60F004455D6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		8A7BF6C71E15B942004455D6 /* PhotoZoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoZoomViewController.swift; sourceTree = "<group>"; };
+		8A7BF6C91E15FA8B004455D6 /* CustomPhotoAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPhotoAlbum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				8A06D1A31E0F2DBF00CF5754 /* Custom Cells */,
 				8A06D19E1E0F2D6200CF5754 /* Protocols */,
 				8A06D1E01E10DA3700CF5754 /* Fonts */,
+				8A7BF6C91E15FA8B004455D6 /* CustomPhotoAlbum.swift */,
 			);
 			path = algos;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				8A06D1E41E11B79500CF5754 /* AlgoHeaderTableViewCell.swift in Sources */,
 				8A06D1B81E0F2DE400CF5754 /* TracksViewController.swift in Sources */,
 				8A05651B1E087C9100E263FA /* algos.xcdatamodeld in Sources */,
+				8A7BF6CA1E15FA8B004455D6 /* CustomPhotoAlbum.swift in Sources */,
 				8A0565131E087C9100E263FA /* AppDelegate.swift in Sources */,
 				8A06D1B71E0F2DE400CF5754 /* TrackDetailsViewController.swift in Sources */,
 				8A06D1B31E0F2DE400CF5754 /* ContainerViewController.swift in Sources */,

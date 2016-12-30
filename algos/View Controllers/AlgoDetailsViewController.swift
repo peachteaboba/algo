@@ -85,7 +85,7 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             picker.sourceType = UIImagePickerControllerSourceType.camera
             picker.cameraCaptureMode = .photo
             picker.modalPresentationStyle = .fullScreen
-            present(picker,animated: true,completion: nil)
+            present(picker,animated: true, completion: nil)
         } else {
             print("No Camera!")
             self.noCamera()
@@ -123,6 +123,9 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         dismiss(animated: true, completion: nil)
         
         let chosenImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        
+        
+        
         
         self.imagesArray.insert(chosenImage, at: 0)
         
@@ -165,7 +168,9 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             if self.context.hasChanges {
                 do {
                     try self.context.save()
-                    print("Success")
+                    print("Success ------- Saving image to camera roll now")
+                    CustomPhotoAlbum.sharedInstance.save(image: self.photo!)
+                    
                 
                 } catch {
                     print("\(error)")
@@ -241,7 +246,7 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         self.menuViewInitialStyles()
         
         
-        
+        let _ = CustomPhotoAlbum.sharedInstance
 
         
         
@@ -498,3 +503,5 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     
     
 }
+
+
