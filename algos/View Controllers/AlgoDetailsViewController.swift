@@ -58,6 +58,7 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     @IBOutlet weak var bugLabel: UILabel!
+    @IBOutlet weak var hintBGViewHeightConstraint: NSLayoutConstraint!
     
     
     // MARK: Handle Stuff Tapped ::::::::::::::::::::::::::::::::::::::::::::::
@@ -107,6 +108,15 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             style:.default,
             handler: nil)
         
+        // Add dummy photo for simulator
+        let simAction = UIAlertAction(
+            title: "Hack",
+            style:.default,
+            handler: addSimImage)
+        
+        alertVC.addAction(simAction)
+
+        
         alertVC.addAction(okAction)
         present(alertVC, animated: true, completion: nil)
     }
@@ -125,18 +135,24 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         let chosenImage = info[UIImagePickerControllerEditedImage] as! UIImage
         
-        
-        
-        
-        self.imagesArray.insert(chosenImage, at: 0)
-        
         self.photo = chosenImage
+        self.imagesArray.insert(self.photo!, at: 0)
 
         // Save the photo object to CoreData and adjust cache accordingly
         self.saveImage()
-        
     }
 
+    func addSimImage(alert: UIAlertAction!){
+        print(" ------ Adding Sim Image ------ ")
+        
+        self.photo = UIImage(named: "robot")
+        self.imagesArray.insert(self.photo!, at: 0)
+        
+        // Save the photo object to CoreData and adjust cache accordingly
+        self.saveImage()
+    }
+    
+    
     
     func saveImage(){
         if self.photo != nil {
@@ -219,6 +235,16 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+    }
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
  
@@ -246,9 +272,9 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         // Menu View Initial Styles
         self.menuViewInitialStyles()
         
+        self.hintBGViewHeightConstraint.constant = self.view.frame.height / 2
         
         let _ = CustomPhotoAlbum.sharedInstance
-
         
         
     }
@@ -292,6 +318,15 @@ class AlgoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: Collection View Methods :::::::::::::::::::::::::::::::::::::::::::::::::::
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+//        let multiplier = (self.photosArray?.count)!
+//        let bottomInset = -(multiplier * 10)
+//        
+//        self.photosTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: CGFloat(bottomInset), right: 0)
+        
+        
+        
+        
         return (self.photosArray?.count)! + 1
     }
     

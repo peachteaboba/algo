@@ -269,6 +269,19 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
             handler: nil)
         
         alertVC.addAction(okAction)
+        
+        // Add dummy photo for simulator
+        let simAction = UIAlertAction(
+            title: "Hack",
+            style:.default,
+            handler: addSimImage)
+        
+        alertVC.addAction(simAction)
+        
+        
+        
+        
+        
         present(alertVC, animated: true, completion: nil)
     }
     
@@ -288,22 +301,32 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
         let chosenImage = info[UIImagePickerControllerEditedImage] as! UIImage
         
         self.photo = chosenImage
-        
-        
-//        print("gotcha!")
-        
+
         // Animate the checkmark
         self.checkMarkDelegate?.AnimateCheckMark(from: "vc")
 
         // Save the photo object to CoreData and adjust cache accordingly
         self.saveImage()
-        
-        
-
-        
     }
     
 
+    func addSimImage(alert: UIAlertAction!){
+        print(" ------ Adding Sim Image ------ ")
+        
+        self.photo = UIImage(named: "robot")
+        // Animate the checkmark
+        self.checkMarkDelegate?.AnimateCheckMark(from: "vc")
+        
+        // Save the photo object to CoreData and adjust cache accordingly
+        self.saveImage()
+    }
+    
+    
+    
+    
+    
+    
+    
     
     func saveImage(){
         if self.photo != nil {

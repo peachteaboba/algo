@@ -20,6 +20,7 @@ class MenuViewController: UITableViewController {
     
     // MARK: Outlets ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+    @IBOutlet var menuTableView: UITableView!
     
 
     @IBOutlet weak var tracksLabel: UILabel!
@@ -32,6 +33,8 @@ class MenuViewController: UITableViewController {
     
     
     
+    @IBOutlet weak var loginViewBG: UIView!
+    @IBOutlet weak var loginLabel: UILabel!
     
     
     
@@ -86,8 +89,15 @@ class MenuViewController: UITableViewController {
             
         }
         
+        self.menuTableView.backgroundColor = self.UIColorFromRGB(0x211f27) // dark purp
+        
+        // Login View Styles
+        self.loginViewBG.layer.cornerRadius = 5
+        self.loginViewBG.backgroundColor = self.UIColorFromRGB(0x19191f) // dark dark purp
+        self.loginLabel.textColor = self.UIColorFromRGB(0x211f27) // dark purp
         
 
+        
         
     }
     
