@@ -37,6 +37,7 @@ class MenuViewController: UITableViewController {
     @IBOutlet weak var loginLabel: UILabel!
     
     
+    @IBOutlet weak var settingsBGView: UIView!
     
     
     
@@ -96,13 +97,24 @@ class MenuViewController: UITableViewController {
         self.loginViewBG.backgroundColor = self.UIColorFromRGB(0x19191f) // dark dark purp
         self.loginLabel.textColor = self.UIColorFromRGB(0x211f27) // dark purp
         
-
+        // Assign event handler to settingsBGView
+        let settingsBGViewTap = UITapGestureRecognizer(target: self, action: #selector(self.handleSettingsBGViewTapped))
+        self.settingsBGView.isUserInteractionEnabled = true
+        self.settingsBGView.addGestureRecognizer(settingsBGViewTap)
         
         
     }
     
     
-    
+    func handleSettingsBGViewTapped(){
+        
+        DispatchQueue.main.async {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingsVC") as! SettingsViewController
+        
+            self.present(vc, animated: true, completion: nil)
+        }
+        
+    }
     
     
     

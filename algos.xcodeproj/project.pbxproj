@@ -28,6 +28,7 @@
 		8A06D1DF1E10B2AF00CF5754 /* UpdateTDVCForPhotoAddDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06D1DE1E10B2AF00CF5754 /* UpdateTDVCForPhotoAddDelegate.swift */; };
 		8A06D1E21E10DA3700CF5754 /* Aerolite-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A06D1E11E10DA3700CF5754 /* Aerolite-Bold.otf */; };
 		8A06D1E41E11B79500CF5754 /* AlgoHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06D1E31E11B79500CF5754 /* AlgoHeaderTableViewCell.swift */; };
+		8A49061A1E1764CF005AA2C0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4906191E1764CF005AA2C0 /* SettingsViewController.swift */; };
 		8A750B311E15AC1F00CEE671 /* ImageZoomDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A750B301E15AC1F00CEE671 /* ImageZoomDelegate.swift */; };
 		8A7BF6C61E15B60F004455D6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BF6C51E15B60F004455D6 /* SWRevealViewController.m */; };
 		8A7BF6C81E15B942004455D6 /* PhotoZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BF6C71E15B942004455D6 /* PhotoZoomViewController.swift */; };
@@ -58,6 +59,7 @@
 		8A06D1DE1E10B2AF00CF5754 /* UpdateTDVCForPhotoAddDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTDVCForPhotoAddDelegate.swift; sourceTree = "<group>"; };
 		8A06D1E11E10DA3700CF5754 /* Aerolite-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aerolite-Bold.otf"; sourceTree = "<group>"; };
 		8A06D1E31E11B79500CF5754 /* AlgoHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlgoHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		8A4906191E1764CF005AA2C0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8A750B301E15AC1F00CEE671 /* ImageZoomDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageZoomDelegate.swift; sourceTree = "<group>"; };
 		8A7BF6C31E15B60F004455D6 /* algos-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "algos-Bridging-Header.h"; sourceTree = "<group>"; };
 		8A7BF6C41E15B60F004455D6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				8A06D1AD1E0F2DE400CF5754 /* LeaderboardViewController.swift */,
 				8A06D1AC1E0F2DE400CF5754 /* ContainerViewController.swift */,
 				8A06D1AE1E0F2DE400CF5754 /* MenuViewController.swift */,
+				8A4906191E1764CF005AA2C0 /* SettingsViewController.swift */,
 				8A06D1B11E0F2DE400CF5754 /* TracksViewController.swift */,
 				8A06D1B01E0F2DE400CF5754 /* TrackDetailsViewController.swift */,
 				8A06D1AB1E0F2DE400CF5754 /* AlgoDetailsViewController.swift */,
@@ -257,6 +260,7 @@
 				8A06D1B81E0F2DE400CF5754 /* TracksViewController.swift in Sources */,
 				8A05651B1E087C9100E263FA /* algos.xcdatamodeld in Sources */,
 				8A7BF6CA1E15FA8B004455D6 /* CustomPhotoAlbum.swift in Sources */,
+				8A49061A1E1764CF005AA2C0 /* SettingsViewController.swift in Sources */,
 				8A0565131E087C9100E263FA /* AppDelegate.swift in Sources */,
 				8A06D1B71E0F2DE400CF5754 /* TrackDetailsViewController.swift in Sources */,
 				8A06D1B31E0F2DE400CF5754 /* ContainerViewController.swift in Sources */,
