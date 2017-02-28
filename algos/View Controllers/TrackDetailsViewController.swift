@@ -45,7 +45,6 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     // MARK: Handle Stuff Tapped ::::::::::::::::::::::::::::::::::::::::::::::
-    
     func handleBackButtonTapped(){
         // Dismiss this view controller
         self.dismiss(animated: true, completion: nil)
@@ -54,30 +53,17 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
 
     
     // MARK: UI Lifecycle Events ::::::::::::::::::::::::::::::::::::::::::::::
-    
     override func viewWillAppear(_ animated: Bool) {
-        
-        
-
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
-        
-        
-        
-        
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -87,14 +73,11 @@ class TrackDetailViewController: UIViewController, UITableViewDelegate, UITableV
         let backButtonTap = UITapGestureRecognizer(target: self, action: #selector(self.handleBackButtonTapped))
         self.backButtonView.isUserInteractionEnabled = true
         self.backButtonView.addGestureRecognizer(backButtonTap)
-       
-        
-        
+
         // Initial Styling -----------
         self.applyInitialStyles()
         
         let _ = CustomPhotoAlbum.sharedInstance
-        
     }
     
     

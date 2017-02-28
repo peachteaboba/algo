@@ -18,6 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var currentView:String?
     var tracksArray:[Track]?
     var algosArray:[Algo]?
+    
+    // User cache ----------------
+    var thisUser:User?
+    
+    
+    
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

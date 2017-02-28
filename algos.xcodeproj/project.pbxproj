@@ -33,9 +33,16 @@
 		8A7BF6C61E15B60F004455D6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BF6C51E15B60F004455D6 /* SWRevealViewController.m */; };
 		8A7BF6C81E15B942004455D6 /* PhotoZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BF6C71E15B942004455D6 /* PhotoZoomViewController.swift */; };
 		8A7BF6CA1E15FA8B004455D6 /* CustomPhotoAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BF6C91E15FA8B004455D6 /* CustomPhotoAlbum.swift */; };
+		A470B5FC7088B722A421CBB0 /* Pods_algos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1495483ABAC41C68E12A192 /* Pods_algos.framework */; };
+		F123C3361E60D5A00058AB1F /* ShowLoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F123C3351E60D5A00058AB1F /* ShowLoginDelegate.swift */; };
+		F135ECAE1E64AF9C00CBCE74 /* ShowRegisterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F135ECAD1E64AF9C00CBCE74 /* ShowRegisterDelegate.swift */; };
+		F139F0C51E5782F900392AA9 /* RegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F139F0C41E5782F900392AA9 /* RegViewController.swift */; };
+		F17E83E01E5F9013004180F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E83DF1E5F9013004180F3 /* LoginViewController.swift */; };
+		F18CF5BB1E64F50C003249CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18CF5BA1E64F50C003249CF /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6904F5503252F7C65F46D1C9 /* Pods-algos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-algos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-algos/Pods-algos.debug.xcconfig"; sourceTree = "<group>"; };
 		8A05650F1E087C9100E263FA /* algos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = algos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A0565121E087C9100E263FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A0565171E087C9100E263FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +73,13 @@
 		8A7BF6C51E15B60F004455D6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		8A7BF6C71E15B942004455D6 /* PhotoZoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoZoomViewController.swift; sourceTree = "<group>"; };
 		8A7BF6C91E15FA8B004455D6 /* CustomPhotoAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPhotoAlbum.swift; sourceTree = "<group>"; };
+		CF7291695794839B0992642F /* Pods-algos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-algos.release.xcconfig"; path = "Pods/Target Support Files/Pods-algos/Pods-algos.release.xcconfig"; sourceTree = "<group>"; };
+		F123C3351E60D5A00058AB1F /* ShowLoginDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowLoginDelegate.swift; sourceTree = "<group>"; };
+		F135ECAD1E64AF9C00CBCE74 /* ShowRegisterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowRegisterDelegate.swift; sourceTree = "<group>"; };
+		F139F0C41E5782F900392AA9 /* RegViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegViewController.swift; sourceTree = "<group>"; };
+		F1495483ABAC41C68E12A192 /* Pods_algos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_algos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F17E83DF1E5F9013004180F3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F18CF5BA1E64F50C003249CF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,17 +87,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A470B5FC7088B722A421CBB0 /* Pods_algos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15909CD1DD84F5E389E6895C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1495483ABAC41C68E12A192 /* Pods_algos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8A0565061E087C9100E263FA = {
 			isa = PBXGroup;
 			children = (
 				8A0565111E087C9100E263FA /* algos */,
 				8A0565101E087C9100E263FA /* Products */,
+				C65CAA1201517A3BFFE6F93F /* Pods */,
+				15909CD1DD84F5E389E6895C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +131,7 @@
 				8A05651E1E087C9100E263FA /* LaunchScreen.storyboard */,
 				8A0565211E087C9100E263FA /* Info.plist */,
 				8A0565191E087C9100E263FA /* algos.xcdatamodeld */,
+				F18CF5B91E64F50C003249CF /* Classes */,
 				8A06D1A31E0F2DBF00CF5754 /* Custom Cells */,
 				8A06D19E1E0F2D6200CF5754 /* Protocols */,
 				8A06D1E01E10DA3700CF5754 /* Fonts */,
@@ -122,6 +148,8 @@
 				8A06D1B91E0F6D5900CF5754 /* UpdateTDVCForPhotoDeleteDelegate.swift */,
 				8A06D1DE1E10B2AF00CF5754 /* UpdateTDVCForPhotoAddDelegate.swift */,
 				8A750B301E15AC1F00CEE671 /* ImageZoomDelegate.swift */,
+				F123C3351E60D5A00058AB1F /* ShowLoginDelegate.swift */,
+				F135ECAD1E64AF9C00CBCE74 /* ShowRegisterDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -149,6 +177,8 @@
 				8A06D1B01E0F2DE400CF5754 /* TrackDetailsViewController.swift */,
 				8A06D1AB1E0F2DE400CF5754 /* AlgoDetailsViewController.swift */,
 				8A7BF6C71E15B942004455D6 /* PhotoZoomViewController.swift */,
+				F139F0C41E5782F900392AA9 /* RegViewController.swift */,
+				F17E83DF1E5F9013004180F3 /* LoginViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -172,6 +202,23 @@
 			path = SWRevealVC;
 			sourceTree = "<group>";
 		};
+		C65CAA1201517A3BFFE6F93F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6904F5503252F7C65F46D1C9 /* Pods-algos.debug.xcconfig */,
+				CF7291695794839B0992642F /* Pods-algos.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F18CF5B91E64F50C003249CF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F18CF5BA1E64F50C003249CF /* User.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -179,9 +226,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A0565241E087C9100E263FA /* Build configuration list for PBXNativeTarget "algos" */;
 			buildPhases = (
+				23E3D67949B4A797C9FB497F /* [CP] Check Pods Manifest.lock */,
 				8A05650B1E087C9100E263FA /* Sources */,
 				8A05650C1E087C9100E263FA /* Frameworks */,
 				8A05650D1E087C9100E263FA /* Resources */,
+				9E20BE614F06F12DDF657027 /* [CP] Embed Pods Frameworks */,
+				56F9F10A1EC97359AEB18588 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -242,6 +292,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		23E3D67949B4A797C9FB497F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		56F9F10A1EC97359AEB18588 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-algos/Pods-algos-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E20BE614F06F12DDF657027 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-algos/Pods-algos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8A05650B1E087C9100E263FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -249,7 +347,10 @@
 			files = (
 				8A06D1A21E0F2D6200CF5754 /* PhotoMenuDelegate.swift in Sources */,
 				8A06D1B61E0F2DE400CF5754 /* ProfileViewController.swift in Sources */,
+				F139F0C51E5782F900392AA9 /* RegViewController.swift in Sources */,
+				F123C3361E60D5A00058AB1F /* ShowLoginDelegate.swift in Sources */,
 				8A7BF6C81E15B942004455D6 /* PhotoZoomViewController.swift in Sources */,
+				F18CF5BB1E64F50C003249CF /* User.swift in Sources */,
 				8A06D1B21E0F2DE400CF5754 /* AlgoDetailsViewController.swift in Sources */,
 				8A06D1A81E0F2DBF00CF5754 /* PhotosTableViewCell.swift in Sources */,
 				8A06D1BA1E0F6D5900CF5754 /* UpdateTDVCForPhotoDeleteDelegate.swift in Sources */,
@@ -258,10 +359,12 @@
 				8A7BF6C61E15B60F004455D6 /* SWRevealViewController.m in Sources */,
 				8A06D1E41E11B79500CF5754 /* AlgoHeaderTableViewCell.swift in Sources */,
 				8A06D1B81E0F2DE400CF5754 /* TracksViewController.swift in Sources */,
+				F17E83E01E5F9013004180F3 /* LoginViewController.swift in Sources */,
 				8A05651B1E087C9100E263FA /* algos.xcdatamodeld in Sources */,
 				8A7BF6CA1E15FA8B004455D6 /* CustomPhotoAlbum.swift in Sources */,
 				8A49061A1E1764CF005AA2C0 /* SettingsViewController.swift in Sources */,
 				8A0565131E087C9100E263FA /* AppDelegate.swift in Sources */,
+				F135ECAE1E64AF9C00CBCE74 /* ShowRegisterDelegate.swift in Sources */,
 				8A06D1B71E0F2DE400CF5754 /* TrackDetailsViewController.swift in Sources */,
 				8A06D1B31E0F2DE400CF5754 /* ContainerViewController.swift in Sources */,
 				8A06D1A11E0F2D6200CF5754 /* AnimateCheckMarkDelegate.swift in Sources */,
@@ -389,6 +492,7 @@
 		};
 		8A0565251E087C9100E263FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6904F5503252F7C65F46D1C9 /* Pods-algos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -405,6 +509,7 @@
 		};
 		8A0565261E087C9100E263FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF7291695794839B0992642F /* Pods-algos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

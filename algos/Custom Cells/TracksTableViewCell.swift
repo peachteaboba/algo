@@ -50,6 +50,7 @@ class TracksTableViewCell: UITableViewCell {
             setControls()
         }
         get {
+            
             return _model!
         }
     }

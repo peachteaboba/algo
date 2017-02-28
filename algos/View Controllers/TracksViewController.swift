@@ -151,7 +151,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         track12.totalM = 100
         track12.totalO = 0
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::
-        
+
         if self.context.hasChanges {
             do {
                 try self.context.save()
@@ -337,6 +337,9 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     // MARK: Variables ::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    
+    
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     
@@ -568,10 +571,6 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let tempArr = results as! [Algo]
             self.algosArray = tempArr.sorted { $0.place < $1.place }
             print("Got all the algos from CoreData")
-
-            
-            
-            
             
             // Calculate total number of algos for each track
             if self.algosArray.count != 0  && self.tracksArray.count != 0 {
@@ -589,9 +588,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     }
                 }
             }
-            
-            
-            
+
             if self.context.hasChanges {
                 do {
                     try self.context.save()
@@ -601,9 +598,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     print("\(error)")
                 }
             }
-            
-            
-            
+
             
         } catch {
             print("\(error)")
@@ -611,11 +606,7 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
 
-    
-    
-    
-    
-    
+
     
     
     
